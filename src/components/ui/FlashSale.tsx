@@ -2,7 +2,19 @@ import Link from "next/link";
 import FlashSaleCard from "./FlashSaleCard";
 import { IoIosArrowForward } from "react-icons/io";
 
-const FlashSale = () => {
+const FlashSale = async() => {
+    const res = await fetch('http://localhost:5000/api/v1/flashSale',{
+        next : {
+            revalidate : 30
+        }
+    })
+    const products = await res.json()
+   
+    products.sort((a : any,b : any)=>{
+        const timeA = new Date(a.creationTime);
+        const timeB = new Date(b.creationTime);
+        return timeB.getTime() - timeA.getTime();
+    })
     return (
         <div className="my-10">
             <div className="flex justify-between items-center">
@@ -12,11 +24,12 @@ const FlashSale = () => {
                     <IoIosArrowForward/>
                 </Link>
             </div>
-            <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 ">
-                <FlashSaleCard />
-                <FlashSaleCard />
-                <FlashSaleCard />
-                <FlashSaleCard />
+            <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+                
+                {
+                    products.slice(0,6).map((product : any)=><FlashSaleCard key={product._id} product={product}  />) 
+                }
+                
             </div>
         </div>
     );
