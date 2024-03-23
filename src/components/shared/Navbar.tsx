@@ -36,7 +36,7 @@ const Navbar = () => {
                             <Link href="/baby-foods">Products</Link>
                         </li>
                         <li>
-                            <Link href="/support">Flash Sales</Link>
+                            <Link href="/flash-sale">Flash Sales</Link>
                         </li>
                         <li>
                             <Link href="/support">About Us</Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
                         <Link href="/baby-foods">Products</Link>
                     </li>
                     <li>
-                        <Link href="/support">Flash Sales</Link>
+                        <Link href="/flash-sale">Flash Sales</Link>
                     </li>
                     <li>
                         <Link href="/support">About Us</Link>
