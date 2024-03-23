@@ -1,6 +1,12 @@
 import FlashSaleCard from "@/components/ui/FlashSaleCard";
+import { product } from "@/type/product";
+import Link from "next/link";
 
-const page = () => {
+const ProductsPage = async () => {
+    const res = await fetch('http://localhost:5000/api/v1/product')
+    const products = await res.json()
+
+
     return (
         <div className="grid grid-cols-12 gap-5 my-10">
             <div className="col-span-2">
@@ -12,14 +18,16 @@ const page = () => {
                 <div>
                     <h1 className="font-bold text-2xl mb-10">Our Collection Of Products</h1>
                 </div>
-                <div className="grid grid-cols-3 gap-5">
-                    <FlashSaleCard />
-                    <FlashSaleCard />
-                    <FlashSaleCard />
-                </div>
+                
+                    <div className="grid grid-cols-3 gap-5 cursor-pointer">
+                        {
+                            products.map((product: product) =>  { return (<Link key={product._id} href={`/baby-foods/${product._id}`}><FlashSaleCard  product={product} /> </Link>)})
+                        }
+
+                    </div>
             </div>
         </div>
     );
 };
 
-export default page;
+export default ProductsPage;
