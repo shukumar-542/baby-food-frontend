@@ -18,7 +18,8 @@ const FlashSale = async() => {
     return (
         <div className="my-10">
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold">Flash Sale</h1>
+                <h1 className='text-3xl font-bold mb-5'><span className='text-[#2C188D]'>Flash</span> <span className='text-[#FD6A02]'>Sale</span></h1>
+
                 <Link href={'/'} className="btn rounded-full ">
                     View All
                     <IoIosArrowForward/>

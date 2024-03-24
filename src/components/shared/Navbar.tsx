@@ -1,5 +1,6 @@
 import Link from "next/link";
-
+import babyFood from '@/assets/baby-food-.png'
+import Image from "next/image";
 const Navbar = () => {
     return (
         <div className="navbar sticky  border-b  max-w-7xl mx-auto">
@@ -46,30 +47,32 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <Link href="/" className="btn btn-ghost text-xl">
-                    {/* <Image src={brandLogo} width={30} height={30} alt="brand logo" /> */}
-                    BabyFood
+                <Link href="/" className="flex items-center gap-2 justify-center ">
+                    <Image src={babyFood} width={30} height={30} alt="brand logo" />
+                    <div className="text-xl font-semibold">
+                        Baby<span className="text-[#FD6A02]">F</span>ood
+                    </div>
                 </Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li>
+            <div className="navbar-center hidden lg:flex gap-2">
+                <ul className="menu  menu-horizontal px-1 space-x-2 ">
+                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                         <Link href="/">Home</Link>
                     </li>
 
-                    <li>
+                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                         <Link href="/about">Categories</Link>
                     </li>
-                    <li>
+                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                         <Link href="/baby-foods">Products</Link>
                     </li>
-                    <li>
+                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white  ">
                         <Link href="/flash-sale">Flash Sales</Link>
                     </li>
-                    <li>
-                        <Link href="/support">About Us</Link>
+                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
+                        <Link href="/dashboard/all-products">Dashboard</Link>
                     </li>
-                    <li>
+                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                         <Link href="/support">Contact Us</Link>
                     </li>
                 </ul>
