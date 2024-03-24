@@ -80,25 +80,25 @@ const priceRange = [
 const ProductsPage = async ({ searchParams }: Props) => {
     let products = []
     if (searchParams.category) {
-        const res = await fetch(`http://localhost:5000/api/v1/category/${searchParams.category}`,{
+        const res = await fetch(`https://baby-food-server.vercel.app/api/v1/category/${searchParams.category}`,{
             cache : 'no-store'
         })
         products = await res.json()
     }
     else if(searchParams.rating){
-        const res = await fetch(`http://localhost:5000/api/v1/rating/${searchParams.rating}`,{
+        const res = await fetch(`https://baby-food-server.vercel.app/api/v1/rating/${searchParams.rating}`,{
             cache : 'no-store'
         })
         products = await res.json()
     }
     else if(searchParams.max && searchParams.max){
-        const res = await fetch(`http://localhost:5000/api/v1/price/${searchParams.min}/${searchParams.max}`,{
+        const res = await fetch(`https://baby-food-server.vercel.app/api/v1/price/${searchParams.min}/${searchParams.max}`,{
             cache : 'no-store'
         })
         products = await res.json()
     }
     else {
-        const res = await fetch('http://localhost:5000/api/v1/product',{
+        const res = await fetch('https://baby-food-server.vercel.app/api/v1/product',{
             cache : "no-store"
         })
         products = await res.json()
@@ -110,9 +110,9 @@ const ProductsPage = async ({ searchParams }: Props) => {
 
     return (
         <div className="grid grid-cols-12 gap-5 my-10">
-            <div className="col-span-2 ">
+            <div className="col-span-2  h-screen sticky top-[70px] mb-5">
                 <div className="mt-2 border border-gray-300 p-2">
-                    <h1 className="border-l-2 border-black pl-2">Price Range</h1>
+                    <h1 className="border-l-2 border-black pl-2 text-[#FD6A02]">Price Range</h1>
                     <div className="ml-4 mt-2 space-y-2 ">
                         {
                             priceRange.map((price) => <PriceCard key={price.min} price={price} />)
@@ -122,7 +122,7 @@ const ProductsPage = async ({ searchParams }: Props) => {
                 </div>
 
                 <div className="mt-2 border border-gray-300 p-2">
-                    <h1 className="border-l-2 border-black pl-2">Categories</h1>
+                    <h1 className="border-l-2 border-black pl-2 text-[#FD6A02]">Categories</h1>
                     <div className="ml-4 mt-2 space-y-2 ">
                         {
                             categoriesName.map((category) => <CategoryCard key={category.name} category={category} />)
@@ -133,7 +133,7 @@ const ProductsPage = async ({ searchParams }: Props) => {
                 </div>
 
                 <div className="mt-5  border border-gray-300 p-2">
-                    <h1 className="border-l-2 border-black pl-2">Rating</h1>
+                    <h1 className="border-l-2 border-black pl-2 text-[#FD6A02]">Rating</h1>
 
                     <div className="ml-4 mt-2 space-y-2 ">
                         {
@@ -145,7 +145,7 @@ const ProductsPage = async ({ searchParams }: Props) => {
             </div>
             <div className="col-span-10">
                 <div>
-                    <h1 className="font-bold text-2xl mb-10"><span className="">Our</span> Our Collection Of Products</h1>
+                    <h1 className="font-bold text-2xl mb-10"><span className="">Our</span>  Collection Of Products</h1>
                 </div>
 
                 <div className="grid grid-cols-3 gap-5 cursor-pointer">

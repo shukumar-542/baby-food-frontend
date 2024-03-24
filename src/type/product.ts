@@ -7,5 +7,6 @@ export interface product {
     creationTime :  string,
     image : string,
     rating :  number,
-    flashSale : boolean 
+    flashSale : boolean,
+    discount : number
 }

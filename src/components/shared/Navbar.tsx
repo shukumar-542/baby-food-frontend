@@ -3,7 +3,7 @@ import babyFood from '@/assets/baby-food-.png'
 import Image from "next/image";
 const Navbar = () => {
     return (
-        <div className="navbar sticky  border-b  max-w-7xl mx-auto">
+        <div className="navbar sticky top-0  border-b bg-white z-10  max-w-7xl mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,9 +30,7 @@ const Navbar = () => {
                             <Link href="/">Home</Link>
                         </li>
 
-                        <li>
-                            <Link href="/about">Categories</Link>
-                        </li>
+                        
                         <li>
                             <Link href="/baby-foods">Products</Link>
                         </li>
@@ -50,7 +48,7 @@ const Navbar = () => {
                 <Link href="/" className="flex items-center gap-2 justify-center ">
                     <Image src={babyFood} width={30} height={30} alt="brand logo" />
                     <div className="text-xl font-semibold">
-                        Baby<span className="text-[#FD6A02]">F</span>ood
+                        <span className="text-[#2C188D]">Baby</span><span className="text-[#FD6A02]">Food</span>
                     </div>
                 </Link>
             </div>

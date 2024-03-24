@@ -13,17 +13,17 @@ type productId = {
 }
 
 
-export const generateStaticParams = async() =>{
-    const res = await fetch('http://localhost:5000/api/v1/product')
+export const generateStaticParams = async () => {
+    const res = await fetch('https://baby-food-server.vercel.app/api/v1/product')
     const products = await res.json()
-     return products.slice(0,3).map((product : product)=> ({
-        productId : product._id
+    return products.slice(0, 3).map((product: product) => ({
+        productId: product._id
     }))
 }
 
 
 const ProductDetailsPage = async ({ params }: productId) => {
-    const res = await fetch(`http://localhost:5000/api/v1/product/${params.productId}`, {
+    const res = await fetch(`https://baby-food-server.vercel.app/api/v1/product/${params.productId}`, {
         cache: "no-store"
     })
     const product = await res.json()
@@ -33,7 +33,7 @@ const ProductDetailsPage = async ({ params }: productId) => {
     let rating = [];
     for (let i = 0; i < product.rating; i++) {
 
-        rating.push(<FaStar fill="yellow" size={25} />)
+        rating.push(<FaStar fill="#FFBF00" size={25} />)
     }
     return (
         <div>
@@ -68,18 +68,23 @@ const ProductDetailsPage = async ({ params }: productId) => {
 
                     </div>
 
-                    <p className="my-5">Lorem ipsum dolor sit amet, consectetuer adipi scing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magn. Lorem ipsum dolor sit amet, consectetuer adipi scing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magn. </p>
+                    <p className="my-5">
+                        Absolutely, here a description for a baby food product:
+
+                        Introducing our delicious and nutritious Baby Bliss Purees! Crafted with utmost care and the finest organic ingredients, Baby Bliss Purees are specially designed to provide your little one with a wholesome start to their culinary journey.
+
+                        Each spoonful bursts with vibrant flavors and essential nutrients essential for your baby growth and development. Our range includes a variety of flavors, from the creamy sweetness of ripe bananas to the earthy goodness of garden-fresh carrots. </p>
                     <div>
                         <p className="flex gap-2 items-center"><MdCategory /> Category : <span className="uppercase font-semibold">{product.category}</span></p>
                         <p className="flex gap-2 items-center">
-                        <TbTruckDelivery />
-                        <span>Free worldwide shipping on all orders over $100</span>
+                            <TbTruckDelivery />
+                            <span>Free worldwide shipping on all orders over $100</span>
                         </p>
 
                     </div>
                 </div>
             </div>
-            <div className="bg-gray-50 py-10 px-5 rounded-md">
+            <div className="bg-gray-50 py-10 px-5 rounded-md mb-5">
                 <h1 className="text-xl font-semibold"> Description</h1>
                 <p>{product?.description}</p>
             </div>

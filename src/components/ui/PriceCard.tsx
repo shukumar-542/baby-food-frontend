@@ -10,7 +10,7 @@ const PriceCard = ({price}  : {price : priceProps}) => {
     return (
         <div>
             <div className="cursor-pointer hover:bg-[#FD6A02] pl-3 hover:text-white hover:rounded-md"  onClick={()=> router.push(`/baby-foods?min=${price.min}&max=${price.max}`)}>
-           <p >${price.min} - ${price.max} </p> 
+           <p >$ {price.min} - $ {price.max} </p> 
         </div>
         </div>
     );

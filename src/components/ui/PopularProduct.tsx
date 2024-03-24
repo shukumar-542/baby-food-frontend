@@ -5,7 +5,7 @@ import { product } from '@/type/product';
 import PopularProductCard from './PopularProductCard';
 
 const PopularProduct = async () => {
-    const res = await fetch('http://localhost:5000/api/v1/top-rating', {
+    const res = await fetch('https://baby-food-server.vercel.app/api/v1/top-rating', {
         next: {
             revalidate: 30
         }

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const DashboardAllProductPage = async () => {
-    const res = await fetch('http://localhost:5000/api/v1/product',{
+    const res = await fetch('https://baby-food-server.vercel.app/api/v1/product',{
         cache : "no-store"
     })
     const products = await res.json()

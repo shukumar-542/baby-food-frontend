@@ -3,7 +3,7 @@ import FlashSaleCard from "./FlashSaleCard";
 import { IoIosArrowForward } from "react-icons/io";
 
 const FlashSale = async() => {
-    const res = await fetch('http://localhost:5000/api/v1/flashSale',{
+    const res = await fetch('https://baby-food-server.vercel.app/api/v1/flashSale',{
         next : {
             revalidate : 30
         }
