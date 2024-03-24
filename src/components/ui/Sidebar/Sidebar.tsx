@@ -1,13 +1,19 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
+import babyFood from '@/assets/baby-food-.png'
 const Sidebar = () => {
     return (
         <div className='bg-gray-200  h-screen sticky text-center'>
-            <div className='pb-10 pt-4'>
-                <h1>Baby Food</h1>
-            </div>
-            <Link href={'/dashboard/all-products'} className='bg-gray-300 py-2 px-6'>Alls Products</Link>
+            <Link href="/">
+                <div className='pb-10 pt-10 flex items-center gap-2 justify-center cursor-pointer'>
+                    <Image src={babyFood} width={30} height={30} alt="brand logo" />
+                    <div className="text-2xl font-semibold ">
+                        Baby<span className="text-[#FD6A02]">Food</span>
+                    </div>
+                </div>
+            </Link>
+            <Link href={'/baby-foods'} className='bg-[#FD6A02] text-white py-2 px-6 rounded-md hover:shadow-md'>All Products</Link>
         </div>
     );
 };

@@ -101,7 +101,7 @@ const ProductsPage = async ({ searchParams }: Props) => {
 
     return (
         <div className="grid grid-cols-12 gap-5 my-10">
-            <div className="col-span-2">
+            <div className="col-span-2 ">
                 <div className="mt-2 border border-gray-300 p-2">
                     <h1 className="border-l-2 border-black pl-2">Price Range</h1>
                     <div className="ml-4 mt-2 space-y-2 ">

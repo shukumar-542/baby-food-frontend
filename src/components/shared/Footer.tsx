@@ -17,10 +17,10 @@ const Footer = () => {
                         <Link href="/support">About Us</Link>
                     </li>
                     <li>
-                        <Link href="/support">Contact Us</Link>
+                        <Link href="/contactus">Contact Us</Link>
                     </li>
                     <li>
-                        <Link href="/support">Customer Care</Link>
+                        <Link href="/customer-care">Customer Care</Link>
                     </li>
                 </ul>
             </nav>
