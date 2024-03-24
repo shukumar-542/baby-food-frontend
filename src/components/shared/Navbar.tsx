@@ -58,9 +58,7 @@ const Navbar = () => {
                         <Link href="/">Home</Link>
                     </li>
 
-                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                        <Link href="/about">Categories</Link>
-                    </li>
+                  
                     <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                         <Link href="/baby-foods">Products</Link>
                     </li>
