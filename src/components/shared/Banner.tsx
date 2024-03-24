@@ -11,10 +11,10 @@ const Banner = () => {
         <div className={`${styles.banner_container} text-white`}>
             <div className="w-[75%] mx-auto text-center ">
                 <div className="my-10">
-                    <h1 className="text-2xl font-bold mb-2">
-                        Crafting Comfort, Redefining Spaces. Your Home, Your Signature Style!
+                    <h1 className="text-4xl font-bold  mb-2">
+                    Introducing PureNourish Baby Wholesome Nutrition for Your Little One
                     </h1>
-                    <p className=" w-[75%] mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla nunc in molestie feugiat. Nunc auctor consectetur elit, quis pulvina. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla nunc in molestie feugiat</p>
+                    <p className=" w-[75%] mx-auto">At PureNourish, we understand that your baby health is your top priority. Thats why we have crafted a range of baby food products using only the finest organic ingredients. Discover the joy of PureNourish Baby today and feed your little explore curiosity with every spoonful.</p>
                 </div>
 
 

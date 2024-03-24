@@ -1,14 +1,16 @@
-import { product } from '@/type/product';
-import Image from 'next/image';
-import React from 'react';
-import { GoPlusCircle } from 'react-icons/go';
+import { product } from "@/type/product";
+import Image from "next/image";
+import { GoPlusCircle } from "react-icons/go";
 
-const FlashSaleCard = ({product} : {product : product}) => {
+const AllProductCard = ({product} : {product : product}) => {
     return (
         <div className="card  bg-base-100 shadow-md">
             <figure className='relative w-full h-[200px]'>
                 <Image src={product?.image} width={200} height={100} alt='Flash sale image' />
-                <div className="badge bg-[#FD6A02] text-white py-1 absolute top-2 left-5">40%</div>
+                {
+                    product?.flashSale && <div className="badge bg-[#FD6A02] text-white py-1 absolute top-2 left-5">40%</div> 
+                }
+                
             </figure>
             <div className="card-body p-5">
                 <h2 className="font-normal ">
@@ -21,10 +23,13 @@ const FlashSaleCard = ({product} : {product : product}) => {
                     </p>
                     <GoPlusCircle />
                 </div>
+                <div>
+
+                </div>
 
             </div>
         </div>
     );
 };
 
-export default FlashSaleCard;
+export default AllProductCard;

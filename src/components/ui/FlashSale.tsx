@@ -20,9 +20,9 @@ const FlashSale = async() => {
             <div className="flex justify-between items-center">
                 <h1 className='text-3xl font-bold mb-5'><span className='text-[#2C188D]'>Flash</span> <span className='text-[#FD6A02]'>Sale</span></h1>
 
-                <Link href={'/'} className="btn rounded-full ">
+                <Link href={'/flash-sale'} className="btn rounded-full bg-[#FD6A04] text-white hover:bg-[#2C188D]">
                     View All
-                    <IoIosArrowForward/>
+                    <IoIosArrowForward  />
                 </Link>
             </div>
             <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">

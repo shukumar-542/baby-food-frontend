@@ -1,3 +1,4 @@
+import AllProductCard from "@/components/ui/AllProductCard";
 import CategoryCard from "@/components/ui/CategoryCard";
 import FlashSaleCard from "@/components/ui/FlashSaleCard";
 import PriceCard from "@/components/ui/PriceCard";
@@ -79,19 +80,27 @@ const priceRange = [
 const ProductsPage = async ({ searchParams }: Props) => {
     let products = []
     if (searchParams.category) {
-        const res = await fetch(`http://localhost:5000/api/v1/category/${searchParams.category}`)
+        const res = await fetch(`http://localhost:5000/api/v1/category/${searchParams.category}`,{
+            cache : 'no-store'
+        })
         products = await res.json()
     }
     else if(searchParams.rating){
-        const res = await fetch(`http://localhost:5000/api/v1/rating/${searchParams.rating}`)
+        const res = await fetch(`http://localhost:5000/api/v1/rating/${searchParams.rating}`,{
+            cache : 'no-store'
+        })
         products = await res.json()
     }
     else if(searchParams.max && searchParams.max){
-        const res = await fetch(`http://localhost:5000/api/v1/price/${searchParams.min}/${searchParams.max}`)
+        const res = await fetch(`http://localhost:5000/api/v1/price/${searchParams.min}/${searchParams.max}`,{
+            cache : 'no-store'
+        })
         products = await res.json()
     }
     else {
-        const res = await fetch('http://localhost:5000/api/v1/product')
+        const res = await fetch('http://localhost:5000/api/v1/product',{
+            cache : "no-store"
+        })
         products = await res.json()
     }
 
@@ -136,12 +145,12 @@ const ProductsPage = async ({ searchParams }: Props) => {
             </div>
             <div className="col-span-10">
                 <div>
-                    <h1 className="font-bold text-2xl mb-10">Our Collection Of Products</h1>
+                    <h1 className="font-bold text-2xl mb-10"><span className="">Our</span> Our Collection Of Products</h1>
                 </div>
 
                 <div className="grid grid-cols-3 gap-5 cursor-pointer">
                     {
-                        products?.map((product: product) => { return (<Link key={product._id} href={`/baby-foods/${product._id}`}><FlashSaleCard product={product} /> </Link>) })
+                        products?.map((product: product) => { return (<Link key={product._id} href={`/baby-foods/${product._id}`}><AllProductCard product={product} /> </Link>) })
                     }
 
                 </div>

@@ -50,8 +50,8 @@ const TopCategory = () => {
 
                     {
                         category.map(cat => (
-                            <button key={cat.name} onClick={()=> router.push(`/baby-foods?category=${cat.name}`)}>
-                            <div key={cat.name} className='bg-gray-100 cursor-pointer flex  flex-col items-center rounded-md shadow-md py-8'>
+                            <button key={cat.name}  onClick={()=> router.push(`/baby-foods?category=${cat.name}`)}>
+                            <div key={cat.name} className='bg-gray-100 cursor-pointer flex   flex-col items-center rounded-md shadow-md py-8'>
                                 <Image src={cat.image} width={100} height={100} alt='Cereals' />
                                 <h1 className='text-2xl uppercase font-semibold my-2 text-[#2C188D]'>{cat.name}</h1>
                             </div>
