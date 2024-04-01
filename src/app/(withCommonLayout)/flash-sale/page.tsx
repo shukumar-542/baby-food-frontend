@@ -4,12 +4,14 @@ import { product } from "@/type/product";
 
 const FlashSalePage = async () => {
     const res = await fetch('https://baby-food-server.vercel.app/api/v1/flashSale',{
-        cache : "no-store"
+        next :{
+            revalidate : 30
+        }
     })
     const products = await res.json();
     return (
-        <div className="mb-10 mt-5">
-            <div className="text-center">
+        <div className="mb-10 mt-5 mx-5">
+            <div className="text-center mb-5">
                 <CountDown/>
             </div>
             <div >

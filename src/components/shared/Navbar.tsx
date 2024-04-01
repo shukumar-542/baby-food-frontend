@@ -36,12 +36,15 @@ const Navbar = () => {
                         </li>
                         <li>
                             <Link href="/flash-sale">Flash Sales</Link>
+                        </li>   
+                        <li>
+                            <Link href="/category">Category</Link>
                         </li>
                         <li>
-                            <Link href="/support">About Us</Link>
+                            <Link href="/about-us">About Us</Link>
                         </li>
                         <li>
-                            <Link href="/support">Contact Us</Link>
+                            <Link href="/contact-us">Contact Us</Link>
                         </li>
                     </ul>
                 </div>
@@ -65,11 +68,17 @@ const Navbar = () => {
                     <li className="hover:bg-[#FD6A02] rounded-md hover:text-white  ">
                         <Link href="/flash-sale">Flash Sales</Link>
                     </li>
+                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white  ">
+                        <Link href="/category">Categories</Link>
+                    </li>
                     <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                         <Link href="/dashboard/all-products">Dashboard</Link>
                     </li>
                     <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                        <Link href="/support">Contact Us</Link>
+                        <Link href="/contact-us">Contact Us</Link>
+                    </li>
+                    <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
+                        <Link href="/about-us">About Us</Link>
                     </li>
                 </ul>
             </div>

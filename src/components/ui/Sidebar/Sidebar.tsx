@@ -8,12 +8,12 @@ const Sidebar = () => {
             <Link href="/">
                 <div className='pb-10 pt-10 flex items-center gap-2 justify-center cursor-pointer'>
                     <Image src={babyFood} width={30} height={30} alt="brand logo" />
-                    <div className="text-2xl font-semibold ">
+                    <div className="text-sm md:text-2xl font-semibold ">
                         Baby<span className="text-[#FD6A02]">Food</span>
                     </div>
                 </div>
             </Link>
-            <Link href={'/baby-foods'} className='bg-[#FD6A02] text-white py-2 px-6 rounded-md hover:shadow-md'>All Products</Link>
+            <Link href={'/baby-foods'} className='bg-[#FD6A02] text-white py-2 mx-1 px-5 rounded-md hover:shadow-md truncate'>All Products</Link>
         </div>
     );
 };

@@ -4,7 +4,7 @@ import img from '@/assets/man.png'
 
 const ContactUsPage = () => {
     return (
-        <div className='grid grid-cols-2 gap-10 w-1/2 h-screen mx-auto justify-end items-center'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-10 w-3/4 h-screen mx-auto justify-end items-center'>
             <div>
                 <h1 className='text-[#FD6A02] text-4xl font-serif py-2'>Contact us</h1>
 

@@ -40,13 +40,13 @@ const TopCategory = () => {
     const router = useRouter();
     
     return (
-        <div className='text-center my-20'>
-            <div className='w-[50%] mx-auto'>
+        <div className='text-center my-20 mx-5 md:mx-0'>
+            <div className='  md:w-[50%] mx-auto'>
                 <h1 className='text-3xl font-bold mb-5'><span className='text-[#2C188D]'>Top</span> <span className='text-[#FD6A02]'>Categories</span></h1>
                 <h1>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.!</h1>
             </div>
             <div className='my-20'>
-                <div className='grid grid-cols-3 gap-5'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
 
                     {
                         category.map(cat => (

@@ -9,7 +9,7 @@ const CategoryCard = ({category} : {category : propsType}) => {
     const router = useRouter();
 
     return (
-        <div className="cursor-pointer hover:bg-[#FD6A02] pl-3 hover:text-white hover:rounded-md"  onClick={()=> router.push(`/baby-foods?category=${category.name}`)}>
+        <div className="cursor-pointer text-[10px] lg:text-[16px] hover:bg-[#FD6A02] pl-3 hover:text-white hover:rounded-md"  onClick={()=> router.push(`/baby-foods?category=${category.name}`)}>
            <p >{category.name}</p> 
         </div>
     );

@@ -16,7 +16,7 @@ type productId = {
 export const generateStaticParams = async () => {
     const res = await fetch('https://baby-food-server.vercel.app/api/v1/product')
     const products = await res.json()
-    return products.slice(0, 3).map((product: product) => ({
+    return products.slice(0, 10).map((product: product) => ({
         productId: product._id
     }))
 }

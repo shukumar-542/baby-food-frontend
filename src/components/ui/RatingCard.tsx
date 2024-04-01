@@ -8,7 +8,7 @@ const RatingCard = ({item} : {item : itemProps}) => {
     const router = useRouter();
 
     return (
-        <div className="cursor-pointer hover:bg-[#FD6A02] pl-3 hover:text-white hover:rounded-md"  onClick={()=> router.push(`/baby-foods?rating=${item.rating}`)}>
+        <div className="cursor-pointer text-[10px] lg:text-[16px] hover:bg-[#FD6A02] pl-3 hover:text-white hover:rounded-md"  onClick={()=> router.push(`/baby-foods?rating=${item.rating}`)}>
            <p >{item.rating} star </p> 
         </div>
     );

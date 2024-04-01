@@ -106,11 +106,10 @@ const ProductsPage = async ({ searchParams }: Props) => {
 
 
 
-    // console.log(searchParams);
 
     return (
-        <div className="grid grid-cols-12 gap-5 my-10">
-            <div className="col-span-2  h-screen sticky top-[70px] mb-5">
+        <div className="grid grid-cols-12 gap-5 my-10 mx-2 ">
+            <div className="col-span-4 md:col-span-2  h-screen sticky top-[70px] mb-5">
                 <div className="mt-2 border border-gray-300 p-2">
                     <h1 className="border-l-2 border-black pl-2 text-[#FD6A02]">Price Range</h1>
                     <div className="ml-4 mt-2 space-y-2 ">
@@ -143,12 +142,12 @@ const ProductsPage = async ({ searchParams }: Props) => {
                     </div>
                 </div>
             </div>
-            <div className="col-span-10">
+            <div className="col-span-8 md:col-span-10">
                 <div>
                     <h1 className="font-bold text-2xl mb-10"><span className="">Our</span>  Collection Of Products</h1>
                 </div>
 
-                <div className="grid grid-cols-3 gap-5 cursor-pointer">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 cursor-pointer">
                     {
                         products?.map((product: product) => { return (<Link key={product._id} href={`/baby-foods/${product._id}`}><AllProductCard product={product} /> </Link>) })
                     }

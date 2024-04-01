@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
             <nav >
 
-                <ul className="grid grid-flow-col gap-4 text-xl font-serif">
+                <ul className="grid grid-cols-1 md:grid-cols-5 gap-4 text-xl font-serif">
                     <li className='text-[#2C188D]'>
                         <Link href="/popular-products">Trending Products</Link>
                     </li>
@@ -17,14 +17,14 @@ const Footer = () => {
                         <Link href="/about-us">About Us</Link>
                     </li>
                     <li className='text-[#FD6A02]'>
-                        <Link href="/contactus">Contact Us</Link>
+                        <Link href="/contact-us">Contact Us</Link>
                     </li>
                     <li className='text-[#2C188D]'>
                         <Link href="/customer-care">Customer Care</Link>
                     </li>
                 </ul>
             </nav>
-            <div className='flex justify-between items-start w-[100%]'>
+            <div className='grid grid-cols-2 md:grid-cols-5 w-[100%]'>
                 <div >
                     <ul className='text-start'>
                         <li className="font-bold">Home</li>
