@@ -5,7 +5,6 @@ import { CiShoppingBasket } from 'react-icons/ci';
 import AddToCatButton from '../shared/AddToCardButton';
 
 const FlashSaleCard = ({product} : {product : product}) => {
-    console.log(product);
     return (
         <div className="card border rounded-md   hover:shadow-xl hover:transition-all cursor-pointer hover:duration-400">
             <figure className='relative w-full h-[250px] '>
