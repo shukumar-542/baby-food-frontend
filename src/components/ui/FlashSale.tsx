@@ -25,7 +25,7 @@ const FlashSale = async() => {
                     <IoIosArrowForward  />
                 </Link>
             </div>
-            <div className="my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+            <div className="my-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 ">
                 
                 {
                     products.slice(0,6).map((product : any)=><FlashSaleCard key={product._id} product={product}  />) 

@@ -17,7 +17,7 @@ const FlashSalePage = async () => {
             <div >
                 <h1 className="text-2xl font-bold mb-10">Flash Sale</h1>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
                 {
                     products.map((product: product) => <FlashSaleCard key={product._id} product={product} />)
                 }

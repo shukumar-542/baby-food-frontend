@@ -11,3 +11,8 @@
     padding: 10px;
     color: white;
 }
+
+:root {
+    --color-primary: #D3710F;
+    --color-secondary: #ecc94b;
+  }
