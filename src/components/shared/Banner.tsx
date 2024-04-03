@@ -8,7 +8,7 @@ import SwiperSilder from "./Swiper";
 
 const Banner = () => {
     return (
-        <div className={`${styles.banner_container} text-white`}>
+        <div className={`${styles.banner_container} text-white container`}>
             <div className="w-[75%] mx-auto text-center ">
                 <div className="my-10">
                     <h1 className="text-2xl md:text-4xl font-bold  mb-2">

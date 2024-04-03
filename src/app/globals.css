@@ -12,8 +12,24 @@
     color: white;
 }
 
+.testimonials{
+    background:  url('../assets/bg_testimonial.webp');
+    width: 100%;
+    /* background-repeat: no-repeat; */
+}
+.testimonials::before{
+    width: 100%;
+    background-image: url('../assets/before.webp');
+    height: 74px;
+}
+
+
+.container{
+    @apply  max-w-7xl mx-auto
+}
+
 :root {
-    --color-primary: #D3710F;
+    --color-primary: #FD6A02;
     --color-secondary: #FBE987;
-    --color-third  : #FDC726
-  }
+    --color-third: #FDC726
+}
