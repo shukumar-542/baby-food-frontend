@@ -18,7 +18,8 @@ const config: Config = {
         'secondary-color' : 'var(--color-secondary)',
         'third-color' : 'var(--color-third)'
   
-      }
+      },
+     
     },
    
   },

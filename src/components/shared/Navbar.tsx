@@ -3,7 +3,7 @@ import babyFood from '@/assets/baby-food-.png'
 import Image from "next/image";
 const Navbar = () => {
     return (
-        <div className="bg-white z-10  sticky top-0 border-b">
+        <div className="bg-white  shadow-sm z-10  sticky top-0 border-b">
             <div className="navbar  container ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -47,6 +47,12 @@ const Navbar = () => {
                             <li>
                                 <Link href="/contact-us">Contact Us</Link>
                             </li>
+                            <li>
+                                <Link href="/login">Login</Link>
+                            </li>
+                            <li>
+                                <Link href="/register">Register</Link>
+                            </li>
                         </ul>
                     </div>
                     <Link href="/" className="flex items-center gap-2 justify-center ">
@@ -80,6 +86,12 @@ const Navbar = () => {
                         </li>
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                             <Link href="/about-us">About Us</Link>
+                        </li>
+                        <li>
+                            <Link href="/login">Login</Link>
+                        </li>
+                        <li>
+                            <Link href="/register">Register</Link>
                         </li>
                     </ul>
                 </div>
