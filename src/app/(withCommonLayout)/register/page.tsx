@@ -28,7 +28,6 @@ const RegisterPage = () => {
 
     const onSubmit: SubmitHandler<TRegisterProps> = async(data) => {
         const res = await registerUser(data)
-        console.log(res);
         if(res?.success){
             toast.success(res?.message)
             const login = await userLogin({email : data?.email , password : data?.password})
