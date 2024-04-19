@@ -3,9 +3,11 @@ import Modal from '@/components/ui/Modal/Modal';
 import { useAllProductQuery, useDeleteProductMutation } from '@/redux/api/productApi';
 import { product } from '@/type/product';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState } from 'react';
 import { AiOutlineDelete } from 'react-icons/ai';
 import { FaRegEdit } from 'react-icons/fa';
+import { IoIosAdd } from 'react-icons/io';
 import { toast } from 'sonner';
 
 const DashboardAllProductPage = () => {
@@ -48,7 +50,14 @@ const DashboardAllProductPage = () => {
                 )
             }
             <div className='p-4 '>
-                <p className='text-2xl font-bold py-2'><span className='text-[#2C188D]'>All</span> <span className='text-[#FD6A02]'>Products</span></p>
+                <div className='flex justify-between items-center mx-2'>
+                    <p className='text-2xl font-bold py-2'><span className='text-[#2C188D]'>All</span> <span className='text-[#FD6A02]'>Products</span></p>
+                    <Link href='/dashboard/products/add-product'>
+                        <button className='bg-gray-300 px-4 py-2 rounded-md flex items-center  '>
+                            <IoIosAdd size={20} />
+                            Add New Products</button>
+                    </Link>
+                </div>
 
 
 
