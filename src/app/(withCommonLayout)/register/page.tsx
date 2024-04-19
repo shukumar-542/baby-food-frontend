@@ -1,28 +1,43 @@
 "use client"
+import { userLogin } from '@/services/action/loginUser';
+import { registerUser } from '@/services/action/registeruser';
+import { storeUserInfo } from '@/services/auth.service';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { BiUser } from 'react-icons/bi';
 import { CiUnlock } from 'react-icons/ci';
 import { MdEmail } from 'react-icons/md';
+import { toast } from 'sonner';
 
-type Inputs = {
+type TRegisterProps = {
     name: string
     email: string
     password: string
 }
 
 const RegisterPage = () => {
-
+    const router = useRouter()
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<Inputs>()
+    } = useForm<TRegisterProps>()
 
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
-        console.log(data)
+    const onSubmit: SubmitHandler<TRegisterProps> = async(data) => {
+        const res = await registerUser(data)
+        console.log(res);
+        if(res?.success){
+            toast.success(res?.message)
+            const login = await userLogin({email : data?.email , password : data?.password})
+            if(login?.token){
+                storeUserInfo(login?.token);
+                toast.success(res?.message)
+                router.push('/')
+            }
+        }
     }
     return (
         <div className='container'>
