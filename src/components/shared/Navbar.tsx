@@ -1,7 +1,12 @@
+"use client"
 import Link from "next/link";
 import babyFood from '@/assets/baby-food-.png'
 import Image from "next/image";
+import dynamic from "next/dynamic";
+const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: false })
+ 
 const Navbar = () => {
+    
     return (
         <div className="bg-white  shadow-sm z-10  sticky top-0 border-b">
             <div className="navbar  container ">
@@ -87,9 +92,8 @@ const Navbar = () => {
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                             <Link href="/about-us">About Us</Link>
                         </li>
-                        <li>
-                            <Link href="/login">Login</Link>
-                        </li>
+                        <AuthButton/>
+                        
                         <li>
                             <Link href="/register">Register</Link>
                         </li>

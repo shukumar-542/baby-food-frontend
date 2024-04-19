@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Providers from "@/lib/Providers/Providers";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme = 'light' >
-      <body className={inter.className}>{children}</body>
-    </html>
+    <Providers>
+      <html lang="en" data-theme='light' >
+        <body className={inter.className}>
+          <>
+            <Toaster position="top-right" />
+            {children}
+          </>
+        </body>
+      </html>
+    </Providers>
   );
 }

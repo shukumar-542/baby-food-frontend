@@ -1,9 +1,13 @@
 "use client"
+import { userLogin } from '@/services/action/loginUser';
+import { storeUserInfo } from '@/services/auth.service';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { CiUnlock } from 'react-icons/ci';
 import { MdEmail } from 'react-icons/md';
+import { toast } from 'sonner';
 
 
 type Inputs = {
@@ -11,6 +15,7 @@ type Inputs = {
     password: string
   }
 const LoginPage = () => {
+    const router = useRouter()
     const {
         register,
         handleSubmit,
@@ -18,8 +23,18 @@ const LoginPage = () => {
       } = useForm<Inputs>()
 
 
-      const onSubmit: SubmitHandler<Inputs> = (data) => {
-        console.log(data)
+      const onSubmit: SubmitHandler<Inputs> = async(data) => {
+          try {
+              const res = await userLogin(data)
+              if(res?.token){
+                storeUserInfo(res?.token)
+                toast.success(res?.message)
+                router.push('/')
+
+              }
+        } catch (err: any) {
+            console.error(err.message)
+        }
     }
     return (
         <div className='container'>
