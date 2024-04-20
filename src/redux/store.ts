@@ -1,13 +1,25 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { baseApi } from './api/baseApi'
 import cartReducer from './feature/cartSlice'
-export const store = configureStore({
-  reducer: {
-    [baseApi.reducerPath]: baseApi.reducer,
-    cart : cartReducer
+import storage from 'redux-persist/lib/storage'
+import { persistReducer } from 'redux-persist'
 
-    
-  },
+
+const persistConfig = {
+  key: 'cart',
+  storage,
+}
+
+
+// const persistedCartReducer = persistReducer(persistConfig, rootReducer)
+
+export const store = configureStore({
+  reducer:  {
+    [baseApi.reducerPath]: baseApi.reducer,
+    cart: cartReducer
+
+
+  } ,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(baseApi.middleware),
 })

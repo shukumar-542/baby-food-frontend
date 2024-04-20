@@ -1,5 +1,6 @@
 import { useAppSelector } from "@/redux/hooks";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
+import CheckoutButton from "../CheckoutButton/CheckoutButton";
 
 const CartTotal = () => {
 
@@ -21,7 +22,7 @@ const CartTotal = () => {
                     {(grandTotal + 15).toFixed(2)}</span></p>
                 
           
-                <button className="bg-[#EF4A23] text-white px-3 py-2 rounded-md w-full ">Confirm Order</button>
+               <CheckoutButton/>
             </div>
         </div>
     );

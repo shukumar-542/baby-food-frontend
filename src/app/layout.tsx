@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "@/lib/Providers/Providers";
 import { Toaster } from "sonner";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,14 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <Providers>
-      <html lang="en" data-theme='light' >
-        <body className={inter.className}>
-          <>
-            <Toaster position="top-right" />
-            {children}
-          </>
-        </body>
-      </html>
+
+        <html lang="en" data-theme='light' >
+          <body className={inter.className}>
+            <>
+              <Toaster position="top-right" />
+              {children}
+            </>
+          </body>
+        </html>
+
     </Providers>
   );
 }

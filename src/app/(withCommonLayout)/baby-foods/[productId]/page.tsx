@@ -1,3 +1,5 @@
+import AddToCardButton from "@/components/shared/AddToCardButton";
+import UserReview from "@/components/ui/UserReview/UserReview";
 import { product } from "@/type/product";
 import Image from "next/image";
 import { CiStar } from "react-icons/ci";
@@ -36,7 +38,7 @@ const ProductDetailsPage = async ({ params }: productId) => {
         rating.push(<FaStar fill="#FFBF00" size={25} />)
     }
     return (
-        <div>
+        <div className="mb-20 container">
             <div className="grid grid-cols-2 items-center gap-8 my-10">
                 <div className="grid grid-cols-8">
                     <div className="col-span-2 ">
@@ -76,10 +78,12 @@ const ProductDetailsPage = async ({ params }: productId) => {
                         Each spoonful bursts with vibrant flavors and essential nutrients essential for your baby growth and development. Our range includes a variety of flavors, from the creamy sweetness of ripe bananas to the earthy goodness of garden-fresh carrots. </p>
                     <div>
                         <p className="flex gap-2 items-center"><MdCategory /> Category : <span className="uppercase font-semibold">{product.category}</span></p>
-                        <p className="flex gap-2 items-center">
+                        <p className="flex gap-2 items-center mb-5">
                             <TbTruckDelivery />
                             <span>Free worldwide shipping on all orders over $100</span>
                         </p>
+
+                        <AddToCardButton product={product} />
 
                     </div>
                 </div>
@@ -88,6 +92,7 @@ const ProductDetailsPage = async ({ params }: productId) => {
                 <h1 className="text-xl font-semibold"> Description</h1>
                 <p>{product?.description}</p>
             </div>
+            <UserReview/>
         </div>
     );
 };
