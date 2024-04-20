@@ -1,7 +1,8 @@
 "use client"
 
 import { useOrderProductMutation } from "@/redux/api/orderApi";
-import { useAppSelector } from "@/redux/hooks";
+import { clearCart } from "@/redux/feature/cartSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { toast } from "sonner";
 type ProductNameAndQuantity = {
     productName: string;
@@ -10,7 +11,10 @@ type ProductNameAndQuantity = {
 
 const CheckoutButton = () => {
     const [orderProduct] = useOrderProductMutation()
+    const dispatch = useAppDispatch()
+
     const { tax, grandTotal, totalPrice, products } = useAppSelector((store) => store.cart)
+
 
 
     const handleCheckout = async () => {
@@ -21,16 +25,17 @@ const CheckoutButton = () => {
             totalPrice
         }
         try {
-           const res = await orderProduct(orderDetails).unwrap()
+            const res = await orderProduct(orderDetails).unwrap()
 
 
-            if(res?.insertedId){
+            if (res?.insertedId) {
                 toast.success('Your order completed')
+                dispatch(clearCart())
             }
 
         } catch (err: any) {
             console.error(err.message)
-        } 
+        }
 
 
 

@@ -7,6 +7,7 @@ export const storeUserInfo = (token : string)=>{
 
 export const getUserInfo = () => {
     const authToken = getToLocalStorage('accessToken')
+    console.log(authToken);
     if (authToken){
         const userData : any = decodeToken(authToken);
         return userData;

@@ -5,9 +5,18 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { LuShoppingCart } from "react-icons/lu";
 import { useAppSelector } from "@/redux/hooks";
+import { getUserInfo } from "@/services/auth.service";
+import { useEffect, useState } from "react";
 const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: false })
 
 const Navbar = () => {
+
+    const [userRole, setUserRole] = useState('');
+
+    useEffect(() => {
+        const { role } = getUserInfo()
+        setUserRole(role)
+    }, [])
     const products = useAppSelector((store) => store.cart.products)
 
     return (
@@ -86,9 +95,20 @@ const Navbar = () => {
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white  ">
                             <Link href="/category">Categories</Link>
                         </li>
-                        <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                            <Link href="/dashboard/products">Dashboard</Link>
-                        </li>
+                        {
+
+                            userRole === 'admin' &&
+                            <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
+                                <Link href="/dashboard/products">Dashboard</Link>
+                            </li>
+                        }
+                        {
+
+                            userRole === 'user' &&
+                            <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
+                                <Link href="/dashboard/my-orders">Dashboard</Link>
+                            </li>
+                        }
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                             <Link href="/contact-us">Contact Us</Link>
                         </li>

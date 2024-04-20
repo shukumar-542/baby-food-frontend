@@ -10,19 +10,23 @@ const CartTotal = () => {
             <div className="space-y-1 font-bold ">
                 <p className="border-b py-2 flex items-center ">
                     <span >Sub Total</span> :<span className=" flex items-center gap-1 ml-5 text-[#EF4A23]"> <FaBangladeshiTakaSign />
-                    {(totalPrice).toFixed(2)}</span></p>
+                        {(totalPrice).toFixed(2)}</span></p>
                 <p className="border-b py-2 flex items-center ">
                     <span >Shipping</span> :<span className=" flex items-center gap-1 ml-5 text-[#EF4A23]"> <FaBangladeshiTakaSign />
-                    15</span></p>
+                        15</span></p>
                 <p className="border-b py-2 flex items-center ">
                     <span >Total Tax</span> :<span className=" flex items-center gap-1 ml-5 text-[#EF4A23]"> <FaBangladeshiTakaSign />
-                    {(tax).toFixed(2)}</span></p>
+                        {(tax).toFixed(2)}</span></p>
                 <p className="border-b py-2 flex items-center ">
                     <span >Grand Total</span> :<span className=" flex items-center gap-1 ml-5 text-[#EF4A23]"> <FaBangladeshiTakaSign />
-                    {(grandTotal + 15).toFixed(2)}</span></p>
-                
-          
-               <CheckoutButton/>
+                        {(grandTotal + 15).toFixed(2)}</span></p>
+
+                <p className="flex items-center gap-2 text-sm py-2"><input type="radio" name="radio-7" className="radio radio-info size-4" checked />
+                <span>Cash On Delivery</span>
+                </p>
+
+
+                <CheckoutButton />
             </div>
         </div>
     );

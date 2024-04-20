@@ -1,8 +1,18 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import babyFood from '@/assets/baby-food-.png'
+import { getUserInfo } from '@/services/auth.service';
+import { sideBarMenus } from '@/utils/sideBarMenu';
 const Sidebar = () => {
+    const [userRole, setUserRole] = useState('');
+
+    useEffect(() => {
+        const { role } = getUserInfo()
+        setUserRole(role)
+    }, [])
+    // console.log(userRole);
     return (
         <div className='bg-gray-200  h-screen sticky text-center'>
             <Link href="/">
@@ -13,7 +23,15 @@ const Sidebar = () => {
                     </div>
                 </div>
             </Link>
-            <Link href={'/baby-foods'} className='bg-[#FD6A02] text-white py-2 mx-1 px-5 rounded-md hover:shadow-md truncate'>All Products</Link>
+          
+            <div className='flex flex-col gap-2'>
+                {
+                    sideBarMenus(userRole).map((item, index) => (
+                        <Link key={index} href={`/dashboard/${item?.path}`} className='bg-[#FD6A02] text-white py-2  px-5  hover:shadow-md truncate'>{item?.title}</Link>
+
+                    ))
+                }
+            </div>
         </div>
     );
 };
