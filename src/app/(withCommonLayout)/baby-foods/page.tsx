@@ -147,9 +147,9 @@ const ProductsPage = async ({ searchParams }: Props) => {
                     <h1 className="font-bold text-2xl mb-10"><span className="">Our</span>  Collection Of Products</h1>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 cursor-pointer">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
                     {
-                        products?.map((product: product) => { return (<Link key={product._id} href={`/baby-foods/${product._id}`}><AllProductCard product={product} /> </Link>) })
+                        products?.map((product: product) => <AllProductCard key={product?._id} product={product} /> )
                     }
 
                 </div>

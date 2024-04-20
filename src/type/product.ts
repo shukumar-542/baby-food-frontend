@@ -8,5 +8,6 @@ export interface product {
     image : string,
     rating :  number,
     flashSale : boolean,
-    discount : number
+    discount : number,
+    quantity : number
 }

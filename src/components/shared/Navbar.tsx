@@ -3,10 +3,13 @@ import Link from "next/link";
 import babyFood from '@/assets/baby-food-.png'
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { LuShoppingCart } from "react-icons/lu";
+import { useAppSelector } from "@/redux/hooks";
 const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: false })
- 
+
 const Navbar = () => {
-    
+    const products = useAppSelector((store) => store.cart.products)
+
     return (
         <div className="bg-white  shadow-sm z-10  sticky top-0 border-b">
             <div className="navbar  container ">
@@ -92,11 +95,19 @@ const Navbar = () => {
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                             <Link href="/about-us">About Us</Link>
                         </li>
-                        <AuthButton/>
-                        
+                        <AuthButton />
+
                         <li>
                             <Link href="/register">Register</Link>
                         </li>
+
+                        <li className="relative">
+                            <Link href="/checkout">
+                                <LuShoppingCart size={25} />
+                                <span className="bg-[#FD6A02] text-white text-center px-1 right-0 top-0  absolute rounded-full">{products.length}</span>
+                            </Link>
+                        </li>
+
                     </ul>
                 </div>
 
