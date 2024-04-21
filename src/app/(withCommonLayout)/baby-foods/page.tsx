@@ -4,7 +4,16 @@ import FlashSaleCard from "@/components/ui/FlashSaleCard";
 import PriceCard from "@/components/ui/PriceCard";
 import RatingCard from "@/components/ui/RatingCard";
 import { product } from "@/type/product";
+import { Metadata } from "next";
 import Link from "next/link";
+
+
+
+export const metadata: Metadata = {
+    title: 'Products',
+    description: 'Baby Food Products',
+  }
+
 
 interface SearchParams {
     category?: string;

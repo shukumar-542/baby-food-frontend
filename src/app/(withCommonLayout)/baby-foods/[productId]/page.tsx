@@ -1,6 +1,7 @@
 import AddToCardButton from "@/components/shared/AddToCardButton";
 import UserReview from "@/components/ui/UserReview/UserReview";
 import { product } from "@/type/product";
+import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import { CiStar } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
@@ -13,6 +14,29 @@ type productId = {
         productId: string
     }
 }
+
+type Props = {
+    params: { productId : string }
+    searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+    { params, searchParams }: Props,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    // read route params
+    const id = params.productId
+
+    // fetch data
+    const product = await fetch(`https://baby-food-server.vercel.app/api/v1/product/${id}`).then((res) => res.json())
+
+
+    return {
+        title: product.productName,
+       
+    }
+}
+
 
 
 export const generateStaticParams = async () => {
@@ -92,7 +116,7 @@ const ProductDetailsPage = async ({ params }: productId) => {
                 <h1 className="text-xl font-semibold"> Description</h1>
                 <p>{product?.description}</p>
             </div>
-            <UserReview/>
+            <UserReview />
         </div>
     );
 };
