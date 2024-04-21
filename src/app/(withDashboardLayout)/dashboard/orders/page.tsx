@@ -1,12 +1,12 @@
 "use client"
-import { useGetOrderProductQuery } from "@/redux/api/orderApi";
-import Image from "next/image";
-import { useState } from "react";
-
+import { useChangeOrderStatusMutation, useGetOrderProductQuery } from "@/redux/api/orderApi";
 const OrderPage = () => {
-    const [deliveryStatus, setDeliveryStatus] = useState('Pending');
     const { data: products, isLoading } = useGetOrderProductQuery({})
-    // console.log(products);
+    const [changeOrderStatus] = useChangeOrderStatusMutation()
+
+    const handleStatus =(id: string)=>{
+        changeOrderStatus(id)
+    }
     return (
         <div >
 
@@ -43,15 +43,18 @@ const OrderPage = () => {
                                 <td>{(product.totalPrice).toFixed(2)}</td>
                                 <td>{(product.grandTotal).toFixed(2)}</td>
                                 <td>
-                                    {/* <select className="select select-primary  max-w-xs">
 
-                                        <option>Pending</option>
-                                        <option>Delivered</option>
-                                    </select> */}
 
                                     {
-                                        product.stats
+                                        product.stats === "pending" ? <div className="flex gap-2 items-center "> 
+                                            <p className="text-red-500">{product.stats}</p>
+                                            <button onClick={()=>handleStatus(product?._id)}>Delivered</button>
+                                        </div>
+
+                                            : <p className="text-green-500 font-semibold">{product.stats}</p>
                                     }
+
+
                                 </td>
                                 <td>
 

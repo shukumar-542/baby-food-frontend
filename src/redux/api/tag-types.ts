@@ -1,9 +1,11 @@
 export enum tagTypes {
-    products = 'specialties',
+    products = 'products',
+    order = 'order'
    
  
 }
 
 export const tagTypeList =[
-    tagTypes.products
+    tagTypes.products,
+    tagTypes.order
 ]
