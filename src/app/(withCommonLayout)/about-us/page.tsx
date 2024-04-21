@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import { BiLocationPlus, BiPhoneCall } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
+export const metadata: Metadata = {
+    title: 'BabyFood | About Us',
+    description: 'About us Page',
+  }
+
 
 const AboutUsPage = () => {
     return (

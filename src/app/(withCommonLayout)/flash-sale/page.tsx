@@ -1,6 +1,12 @@
 import CountDown from "@/components/CountDown/CountDown";
 import FlashSaleCard from "@/components/ui/FlashSaleCard";
 import { product } from "@/type/product";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'BabyFood | Flash Sale',
+    description: 'Flash Sale products',
+  }
 
 const FlashSalePage = async () => {
     const res = await fetch('https://baby-food-server.vercel.app/api/v1/flashSale',{

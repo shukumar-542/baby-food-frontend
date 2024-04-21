@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import React from 'react';
 import img from '@/assets/man.png'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'BabyFood | Contact Us',
+    description: 'Contact us Page',
+  }
 
 const ContactUsPage = () => {
     return (
