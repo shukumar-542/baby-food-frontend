@@ -15,7 +15,7 @@ export const sideBarMenus = (role: string) => {
                 },
                 {
                     title : 'Order Management',
-                    path : 'order'
+                    path : 'orders'
                 },
             )
             break;
