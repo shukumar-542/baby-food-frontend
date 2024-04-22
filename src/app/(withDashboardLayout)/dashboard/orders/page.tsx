@@ -1,17 +1,28 @@
 "use client"
 import { useChangeOrderStatusMutation, useGetOrderProductQuery } from "@/redux/api/orderApi";
+import { toast } from "sonner";
 const OrderPage = () => {
     const { data: products, isLoading } = useGetOrderProductQuery({})
     const [changeOrderStatus] = useChangeOrderStatusMutation()
 
-    const handleStatus =(id: string)=>{
-        changeOrderStatus(id)
+    const handleStatus = async (id: string) => {
+
+        try {
+            const res = await changeOrderStatus(id).unwrap()
+            console.log(res);
+            if(res?.acknowledged){
+                toast.success('Product successfully delivered!')
+            }
+
+        } catch (err: any) {
+            console.error(err.message)
+        }
     }
     return (
         <div >
 
 
-            <h1>All Orders :</h1>
+            <h1 className="text-2xl font-serif mt-5 ml-5">All Orders :</h1>
 
 
 
@@ -46,12 +57,12 @@ const OrderPage = () => {
 
 
                                     {
-                                        product.stats === "pending" ? <div className="flex gap-2 items-center "> 
-                                            <p className="text-red-500">{product.stats}</p>
-                                            <button onClick={()=>handleStatus(product?._id)}>Delivered</button>
+                                        product.stats === "pending" ? <div className="flex gap-2 items-center ">
+                                            <p className="text-red-500 uppercase font-semibold">{product.stats}</p>
+                                            <button className="btn btn-outline btn-error hover:text-white " onClick={() => handleStatus(product?._id)}>Delivered</button>
                                         </div>
 
-                                            : <p className="text-green-500 font-semibold">{product.stats}</p>
+                                            : <p className="text-green-500 font-semibold uppercase">{product.stats}</p>
                                     }
 
 

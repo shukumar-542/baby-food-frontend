@@ -2,18 +2,16 @@ export const setUserLocalStorage = (key: string, token: string) => {
     if (!key || typeof window === "undefined") {
         return ""
     }
-    localStorage.setItem(key, token)
+    return localStorage.setItem(key, token)
 }
 
 
 export const getToLocalStorage = (key: string) => {
 
-    if (!key || typeof window === undefined) {
+    if (!key || typeof window === "undefined") {
         return ""
-    } else {
-        const getUser = localStorage.getItem(key)
-        return getUser
-    }
+    } 
+    return localStorage.getItem(key)
 
 
 

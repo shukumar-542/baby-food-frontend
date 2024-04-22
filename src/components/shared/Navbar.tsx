@@ -2,22 +2,38 @@
 import Link from "next/link";
 import babyFood from '@/assets/baby-food-.png'
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { LuShoppingCart } from "react-icons/lu";
 import { useAppSelector } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: false })
+// import AuthButton from "../ui/AuthButton/AuthButton";
+
+
 
 const Navbar = () => {
+    const [userRole, setUserRole] = useState()
+    const [loading, setLoading] = useState(true);
 
-    const [userRole, setUserRole] = useState('');
+    const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: false })
+    
+    useEffect(()=>{
+        const fetchUserRole = async () => {
+            const userInfo = await getUserInfo();
+            if (userInfo && userInfo.role) {
+                setUserRole(userInfo.role);
+            }
+            setLoading(false);
+        };
 
-    useEffect(() => {
-        const { role } = getUserInfo()
-        setUserRole(role)
-    }, [])
+        fetchUserRole();
+    },[])
+    // console.log(userInfo);
+
     const products = useAppSelector((store) => store.cart.products)
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="bg-white  shadow-sm z-10  sticky top-0 border-b">
@@ -95,7 +111,7 @@ const Navbar = () => {
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white  ">
                             <Link href="/category">Categories</Link>
                         </li>
-                        {
+                        {/* {
 
                             userRole === 'admin' &&
                             <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
@@ -108,14 +124,18 @@ const Navbar = () => {
                             <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                                 <Link href="/dashboard/my-orders">Dashboard</Link>
                             </li>
-                        }
+                        } */}
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                             <Link href="/contact-us">Contact Us</Link>
                         </li>
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                             <Link href="/about-us">About Us</Link>
                         </li>
+
+
                         <AuthButton />
+
+
 
                         <li>
                             <Link href="/register">Register</Link>
