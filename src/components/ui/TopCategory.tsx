@@ -7,32 +7,32 @@ const category = [
     {
         image: "https://i.ibb.co/6ZB6Vxz/milk.png",
         name: 'Milk',
-        color: 'third-color'
+        color: "#1BBC9B"
     },
     {
         image: "https://i.ibb.co/FYC34f9/cereal.png",
         name: 'Cereals',
-        color: 'third-color'
+        color: '#685C88'
     },
     {
         image: "https://i.ibb.co/KqvHt8b/cracker.png",
         name: 'Crackers',
-        color: 'third-color'
+        color: '#E31837'
     },
     {
         image: "https://i.ibb.co/997zWpJ/snack.png",
         name: 'Snacks',
-        color: 'third-color'
+        color: '#6EC3F0'
     },
     {
         image: "https://i.ibb.co/Jt7bBTB/juices.png",
         name: 'Juice',
-        color: 'third-color'
+        color: '#1BBC9B'
     },
     {
         image: "https://i.ibb.co/3NCRr1G/cookie.png",
         name: 'Cookies',
-        color: 'third-color'
+        color: '#685C88'
 
     }
 ]
@@ -53,7 +53,7 @@ const TopCategory = () => {
                         {
                             category.map(cat => (
                                 <button key={cat.name} onClick={() => router.push(`/baby-foods?category=${cat.name}`)}>
-                                    <div key={cat.name} className={`bg-third-color cursor-pointer flex hover:shadow-slate-600 hover:transition-all   flex-col items-center rounded-md shadow-md py-8`}>
+                                    <div key={cat.name} className={`bg-[${cat.color}] cursor-pointer flex hover:shadow-slate-600 hover:transition-all   flex-col items-center rounded-md shadow-md py-8`}>
                                         <Image src={cat.image} width={100} height={100} alt='Cereals' />
                                         <h1 className='text-2xl uppercase font-semibold my-2 text-[#4A4326]'>{cat.name}</h1>
                                     </div>
