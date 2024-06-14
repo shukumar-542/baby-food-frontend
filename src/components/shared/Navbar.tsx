@@ -7,15 +7,14 @@ import { useAppSelector } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-// import AuthButton from "../ui/AuthButton/AuthButton";
 
 
+const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: false })
 
 const Navbar = () => {
     const [userRole, setUserRole] = useState()
     const [loading, setLoading] = useState(true);
 
-    const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: false })
     
     useEffect(()=>{
         const fetchUserRole = async () => {
@@ -28,12 +27,11 @@ const Navbar = () => {
 
         fetchUserRole();
     },[])
-    // console.log(userInfo);
 
     const products = useAppSelector((store) => store.cart.products)
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
 
     return (
         <div className="bg-white  shadow-sm z-10  sticky top-0 border-b">
@@ -111,20 +109,7 @@ const Navbar = () => {
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white  ">
                             <Link href="/category">Categories</Link>
                         </li>
-                        {/* {
-
-                            userRole === 'admin' &&
-                            <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                                <Link href="/dashboard/products">Dashboard</Link>
-                            </li>
-                        }
-                        {
-
-                            userRole === 'user' &&
-                            <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                                <Link href="/dashboard/my-orders">Dashboard</Link>
-                            </li>
-                        } */}
+                       
                         <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
                             <Link href="/contact-us">Contact Us</Link>
                         </li>

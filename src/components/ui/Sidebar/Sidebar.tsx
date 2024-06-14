@@ -14,16 +14,18 @@ const Sidebar = () => {
     }, [])
     // console.log(userRole);
     return (
-        <div className='bg-gray-200  h-screen sticky text-center'>
+        <div className='bg-gray-200  h-full  '>
             <Link href="/">
-                <div className='pb-10 pt-10 flex items-center gap-2 justify-center cursor-pointer'>
+                <div className='pb-10 pt-10 flex items-center gap-2  justify-center cursor-pointer'>
                     <Image src={babyFood} width={30} height={30} alt="brand logo" />
                     <div className="text-sm md:text-2xl font-semibold ">
                         Baby<span className="text-[#FD6A02]">Food</span>
                     </div>
                 </div>
             </Link>
-          
+
+           
+
             <div className='flex flex-col gap-2'>
                 {
                     sideBarMenus(userRole).map((item, index) => (

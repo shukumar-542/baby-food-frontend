@@ -18,7 +18,7 @@ const UserNavbar = () => {
         setUserRole(user)
     }, [])
     return (
-        <div className="bg-gray-200 h-14 flex items-center justify-end text-end gap-5 pr-16">
+        <div className="bg-gray-200 h-14 flex items-center justify-end text-end gap-5 pr-16 sticky top-0">
             <div>
                 <p className="font-semibold">{user?.email} </p>
                 <p>{user?.role} </p>

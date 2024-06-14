@@ -1,4 +1,5 @@
 "use client"
+import Button from '@/components/ui/Button/Button';
 import Modal from '@/components/ui/Modal/Modal';
 import { useAllProductQuery, useDeleteProductMutation } from '@/redux/api/productApi';
 import { product } from '@/type/product';
@@ -53,9 +54,9 @@ const DashboardAllProductPage = () => {
                 <div className='flex justify-between items-center mx-2'>
                     <p className='text-2xl font-bold py-2'><span className='text-[#2C188D]'>All</span> <span className='text-[#FD6A02]'>Products</span></p>
                     <Link href='/dashboard/products/add-product'>
-                        <button className='bg-gray-300 px-4 py-2 rounded-md flex items-center  '>
+                        <Button >
                             <IoIosAdd size={20} />
-                            Add New Products</button>
+                            Add New Products</Button>
                     </Link>
                 </div>
 

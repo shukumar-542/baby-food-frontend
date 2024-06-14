@@ -7,6 +7,8 @@ import { toast } from "sonner";
 type ProductNameAndQuantity = {
     productName: string;
     quantity: number;
+    image : string,
+    price : number
 };
 
 const CheckoutButton = () => {
@@ -18,11 +20,12 @@ const CheckoutButton = () => {
 
 
     const handleCheckout = async () => {
-        const productNameAndQuantity: ProductNameAndQuantity[] = products.map(({ productName, quantity }) => ({ productName, quantity }));
+        const productNameAndQuantity: ProductNameAndQuantity[] = products.map(({ productName, quantity,image,price }) => ({ productName, quantity, image,price }));
         const orderDetails = {
             products: productNameAndQuantity,
             tax, grandTotal,
-            totalPrice
+            totalPrice,
+
         }
         try {
             const res = await orderProduct(orderDetails).unwrap()
