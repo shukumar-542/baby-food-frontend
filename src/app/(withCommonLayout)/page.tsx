@@ -1,6 +1,7 @@
 import Banner from '@/components/shared/Banner';
 import FlashSale from '@/components/ui/FlashSale';
 import PopularProduct from '@/components/ui/PopularProduct';
+import SpecialProduct from '@/components/ui/SpecialProduct';
 import Testimonials from '@/components/ui/Testimonials';
 import TopCategory from '@/components/ui/TopCategory';
 import { Metadata } from 'next';
@@ -19,6 +20,7 @@ const HomePage = () => {
       <TopCategory/>
       <PopularProduct/>
       <Testimonials/>
+      <SpecialProduct/>
     </div>
   );
 };

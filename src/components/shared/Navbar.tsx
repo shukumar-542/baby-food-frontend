@@ -25,6 +25,7 @@ const Navbar = () => {
             setLoading(false);
         };
 
+        
         fetchUserRole();
     },[])
 
@@ -35,7 +36,7 @@ const Navbar = () => {
 
     return (
         <div className="bg-white  shadow-sm z-10  sticky top-0 border-b">
-            <div className="navbar  container ">
+            <div className="navbar   ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
