@@ -108,11 +108,6 @@ const MyOrdersPage = () => {
                 </table>
             </div>
 
-
-            <div>
-                <h1>Hello</h1>
-            </div>
-
             </div>
 
             
