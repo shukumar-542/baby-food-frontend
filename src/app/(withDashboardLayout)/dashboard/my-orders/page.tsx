@@ -37,7 +37,7 @@ const MyOrdersPage = () => {
                     <div className='flex  items-center justify-end'>
                         <div className='border-t w-full '></div>
                         <p className='bg-[#4F4BFF] p-2 rounded-full text-white'>
-                            
+
                             <MdPending size={20} className='text-[#EEF2FF]' />
                             {/* <BiCheckCircle size={20} className='text-[#EEF2FF]' /> */}
 
@@ -51,66 +51,66 @@ const MyOrdersPage = () => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-12 gap-5'>
-            <div className="overflow-x-auto h-[100vh] col-span-8 " style={{ height: "calc(100vh - 130px)" }}>
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            {/* <th>status</th> */}
-                        </tr>
-                    </thead>
+                <div className="overflow-x-auto h-[100vh] col-span-8 " style={{ height: "calc(100vh - 130px)" }}>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                {/* <th>status</th> */}
+                            </tr>
+                        </thead>
 
-                    <>
-                        {
-                            orderProduct?.map((product: any, i: number) => <tbody key={product._id}>
+                        <>
+                            {
+                                orderProduct?.map((product: any, i: number) => <tbody key={product._id}>
 
 
-                                {
-                                    product?.products?.map((order: any, i: number) =>
+                                    {
+                                        product?.products?.map((order: any, i: number) =>
 
-                                        <tr key={product?._id}>
-                                            <td>
-                                                <Image src={order?.image}
-                                                    height={40} width={40} alt="product" />
-                                            </td>
-                                            <td>{order?.productName}</td>
-                                            <td>{order?.price}</td>
-                                            <td >
+                                            <tr key={product?._id}>
+                                                <td>
+                                                    <Image src={order?.image}
+                                                        height={40} width={40} alt="product" />
+                                                </td>
+                                                <td>{order?.productName}</td>
+                                                <td>{order?.price}</td>
+                                                <td >
 
-                                                {order?.quantity}
+                                                    {order?.quantity}
 
-                                            </td>
-                                            {/* <td>{order?.stats}</td> */}
-                                            {/* <td className='flex justify-start gap-5'>
+                                                </td>
+                                                {/* <td>{order?.stats}</td> */}
+                                                {/* <td className='flex justify-start gap-5'>
                                                 <input type="text" placeholder="Type here" className="border-1 input-bordered w-full max-w-4" />
                                                 <button>Send</button>
                                             </td> */}
-                                        </tr>
+                                            </tr>
 
 
-                                    )
-                                }
+                                        )
+                                    }
 
 
 
-                                <td>
+                                    <td>
 
 
-                                </td>
-                            </tbody>)
-                        }
+                                    </td>
+                                </tbody>)
+                            }
 
 
-                    </>
-                </table>
+                        </>
+                    </table>
+                </div>
+
             </div>
 
-            </div>
 
-            
 
 
         </div >

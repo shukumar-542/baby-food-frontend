@@ -3,8 +3,9 @@ import Image from 'next/image';
 import React from 'react';
 import { CiShoppingBasket } from 'react-icons/ci';
 import AddToCatButton from '../shared/AddToCardButton';
+import Link from 'next/link';
 
-const FlashSaleCard = ({product} : {product : product}) => {
+const FlashSaleCard = ({ product }: { product: product }) => {
     return (
         <div className="card border rounded-md   hover:shadow-xl hover:transition-all cursor-pointer hover:duration-400">
             <figure className='relative w-full h-[250px] '>
@@ -14,9 +15,11 @@ const FlashSaleCard = ({product} : {product : product}) => {
                 }
             </figure>
             <div className="card-body p-5 text-center">
-                <h2 className="font-normal text-center hover:underline hover:text-primary-color ">
-                   {product?.productName}
-                </h2>
+                <Link href={`/baby-foods/${product?._id}`}>
+                    <h2 className="font-normal text-center hover:underline hover:text-primary-color ">
+                        {product?.productName}
+                    </h2>
+                </Link>
                 <div className='flex justify-between items-center'>
                     <p>
                         <del >$25</del>
