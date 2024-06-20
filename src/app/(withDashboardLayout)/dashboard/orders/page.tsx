@@ -9,7 +9,7 @@ const OrderPage = () => {
 
         try {
             const res = await changeOrderStatus(id).unwrap()
-            console.log(res);
+            // console.log(res);
             if(res?.acknowledged){
                 toast.success('Product successfully delivered!')
             }

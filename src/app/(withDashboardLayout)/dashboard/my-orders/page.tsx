@@ -50,12 +50,57 @@ const MyOrdersPage = () => {
 
 
                     </div>
-                    <p className='mt-2  text-start'>Delivredy</p>
+                    <p className='mt-2  text-start'>Delivery</p>
                 </div>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-12 gap-5'>
-                <div className="overflow-x-auto h-[100vh] col-span-8 w-full " style={{ height: "calc(100vh - 130px)" }}>
+            {/* <div className='grid grid-cols-1 md:grid-cols-12 gap-5'> */}
+
+            <div className="overflow-x-auto h-[100vh]" style={{ height: "calc(100vh - 130px)" }}>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Grand Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            allProducts?.map((product: any, i: number) => <tr key={product._id}>
+                                <th>{i + 1}</th>
+                                <td className='flex flex-col  gap-5'>
+
+                                    {
+                                        product?.products.map((order: any, i: number) =>
+                                            <p key={i} >{order?.productName}</p>
+
+                                        )
+                                    }
+                                </td>
+                                <td>{(product.totalPrice).toFixed(2)}</td>
+                                <td>{(product.grandTotal).toFixed(2)}</td>
+                                <td>
+                                    <p className={`${product.stats === 'delivered' ? "text-green-500" : "text-red-500"}  font-semibold uppercase`} >{product.stats}</p>
+
+                                </td>
+                                <td>
+
+
+                                </td>
+                            </tr>)
+                        }
+
+
+                    </tbody>
+                </table>
+                {/* </div> */}
+
+
+                {/* <div className="overflow-x-auto h-[100vh] col-span-8 w-full " style={{ height: "calc(100vh - 130px)" }}>
                     <table className="table">
                         <thead>
                             <tr>
@@ -101,7 +146,7 @@ const MyOrdersPage = () => {
 
                         </>
                     </table>
-                </div>
+                </div> */}
 
             </div>
 
