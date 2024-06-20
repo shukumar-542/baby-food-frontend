@@ -1,6 +1,7 @@
 "use client"
 import CheckoutCart from '@/components/ui/CheckoutCart/CheckoutCart';
 import { useGetOrderProductQuery } from '@/redux/api/orderApi';
+import { getUserInfo } from '@/services/auth.service';
 import { product } from '@/type/product';
 import Image from 'next/image';
 import React from 'react';
@@ -9,8 +10,11 @@ import { MdPending } from 'react-icons/md';
 
 const MyOrdersPage = () => {
 
+    const userInfo = getUserInfo();
+
     const { data: orderProduct, isLoading } = useGetOrderProductQuery({})
-    // console.log(orderProduct);
+    const allProducts = orderProduct?.filter((product: any) => product.email === userInfo?.email)
+    console.log(allProducts);
     return (
         <div className='mt-10 mx-10'>
             <div className='flex items-center gap-2 '>
@@ -51,7 +55,7 @@ const MyOrdersPage = () => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-12 gap-5'>
-                <div className="overflow-x-auto h-[100vh] col-span-8 " style={{ height: "calc(100vh - 130px)" }}>
+                <div className="overflow-x-auto h-[100vh] col-span-8 w-full " style={{ height: "calc(100vh - 130px)" }}>
                     <table className="table">
                         <thead>
                             <tr>
@@ -59,14 +63,13 @@ const MyOrdersPage = () => {
                                 <th>Product Name</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
-                                {/* <th>status</th> */}
+                                <th>status</th>
                             </tr>
                         </thead>
 
                         <>
                             {
-                                orderProduct?.map((product: any, i: number) => <tbody key={product._id}>
-
+                                allProducts?.map((product: any, i: number) => <tbody key={product._id}>
 
                                     {
                                         product?.products?.map((order: any, i: number) =>
@@ -83,23 +86,15 @@ const MyOrdersPage = () => {
                                                     {order?.quantity}
 
                                                 </td>
-                                                {/* <td>{order?.stats}</td> */}
-                                                {/* <td className='flex justify-start gap-5'>
-                                                <input type="text" placeholder="Type here" className="border-1 input-bordered w-full max-w-4" />
-                                                <button>Send</button>
-                                            </td> */}
+                                                <td>{order?.stats}</td>
+                                               
+
+
                                             </tr>
+                                                )
+                                            }
 
 
-                                        )
-                                    }
-
-
-
-                                    <td>
-
-
-                                    </td>
                                 </tbody>)
                             }
 
