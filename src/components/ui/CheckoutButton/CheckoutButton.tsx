@@ -3,6 +3,7 @@
 import { useOrderProductMutation } from "@/redux/api/orderApi";
 import { clearCart } from "@/redux/feature/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { getUserInfo } from "@/services/auth.service";
 import { toast } from "sonner";
 type ProductNameAndQuantity = {
     productName: string;
@@ -14,6 +15,8 @@ type ProductNameAndQuantity = {
 const CheckoutButton = () => {
     const [orderProduct] = useOrderProductMutation()
     const dispatch = useAppDispatch()
+    const {email} = getUserInfo()
+    // console.log(userInfo);
 
     const { tax, grandTotal, totalPrice, products } = useAppSelector((store) => store.cart)
 
@@ -25,6 +28,7 @@ const CheckoutButton = () => {
             products: productNameAndQuantity,
             tax, grandTotal,
             totalPrice,
+            email
 
         }
         try {

@@ -10,7 +10,7 @@ import { MdPending } from 'react-icons/md';
 const MyOrdersPage = () => {
 
     const { data: orderProduct, isLoading } = useGetOrderProductQuery({})
-    console.log(orderProduct);
+    // console.log(orderProduct);
     return (
         <div className='mt-10 mx-10'>
             <div className='flex items-center gap-2 '>

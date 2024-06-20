@@ -21,10 +21,7 @@ interface EmailPassword {
 
 const LoginPage = () => {
 
-    const [emailPassword, setEmailPassword] = useState<EmailPassword>({
-        email  : '',
-        pass : ''
-    })
+    const [emailPassword, setEmailPassword] = useState({})
     const router = useRouter()
     const {
         register,
@@ -48,9 +45,9 @@ const LoginPage = () => {
     }
 
     const addEmail = () => {
-        setEmailPassword({"email" :"sh@mgail.com", "pass" : '123456'})
+        setEmailPassword({"email" :"user@gmail.com", "pass" : '123456'})
     }
-    // console.log(emailPassword?.pass);
+    console.log(emailPassword?.pass);
     return (
         <div className='container'>
             <div className='flex  items-center  h-[100vh] my-auto'>
@@ -60,20 +57,21 @@ const LoginPage = () => {
                     </div>
                     <p className='mt-2 text-sm'>Insert your account information:</p>
 
-                    <button onClick={() => addEmail()} className='bg-gray-200 p-1 rounded-md shadow-md mt-2' >Set Default Email Password</button>
+                    <button onClick={() => addEmail()} className='bg-gray-200 p-1 rounded-md shadow-md mt-2' >Set Defaults Email Password</button>
                     <div className='mt-5'>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="flex items-center gap-2 border hover:border-red-400 border-gray-300 rounded-lg p-2">
                                 <MdEmail className="text-gray-500 mr-2 w-6  size-6" />
                                 <input type="email" placeholder="Email"
-                                value={emailPassword ?  emailPassword?.email : ""}
+                                defaultValue={emailPassword?.email}
                                 className="flex-grow outline-none border-none" {...register("email")} />
 
                             </div>
                             <div className="flex mt-5 items-center gap-2 border hover:border-red-400 border-gray-300 rounded-lg p-2">
                                 <CiUnlock className="text-gray-500 mr-2 w-6  size-6" />
-                                <input type="password" placeholder="password" 
-                                value={emailPassword?.pass} className="flex-grow outline-none border-none" {...register("password")} />
+                                <input  placeholder="password" 
+                                defaultValue={emailPassword?.pass} 
+                                className="flex-grow outline-none border-none" {...register("password")} />
                             </div>
                             <div className='flex items-center mt-3'>
                                 <MdEmail className="text-gray-500 mr-2 w-6  " />
