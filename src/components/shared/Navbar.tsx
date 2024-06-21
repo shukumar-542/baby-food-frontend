@@ -7,6 +7,7 @@ import { useAppSelector } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import NavLink from "../ui/NavLink";
 
 
 const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: false })
@@ -14,7 +15,7 @@ const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: f
 const Navbar = () => {
     const [userRole, setUserRole] = useState()
     const [loading, setLoading] = useState(true);
-
+    
     
     useEffect(()=>{
         const fetchUserRole = async () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
 
     return (
         <div className="bg-white  shadow-sm z-10  sticky top-0 border-b">
-            <div className="navbar   ">
+            <div className="navbar h-[10px  ]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -101,27 +102,65 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex gap-2">
-                    <ul className="menu  menu-horizontal px-1 space-x-2 ">
-                        <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                            <Link href="/">Home</Link>
+
+
+
+
+                <ul className="menu-horizontal items-center px-1  space-x-2 ">
+                        <li>
+                            <NavLink href="/">Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/baby-foods">Products</NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/flash-sale">Flash Sales</NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/category">Categories</NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/contact-us">Contact Us</NavLink>
+                        </li>
+                        <li>
+                            <NavLink href="/about-us">About Us</NavLink>
+                        </li>
+                        <AuthButton />
+                        <li>
+                            <NavLink href="/register">Register</NavLink>
+                        </li>
+                        <li className="relative">
+                            <Link href="/checkout">
+                                <LuShoppingCart size={30} />
+                                <span className="bg-[#FD6A02] text-white text-center px-1 right-0 top-[-12px]  absolute rounded-full">{products.length}</span>
+                            </Link>
+                        </li>
+                    </ul>
+
+
+
+
+                    {/* <ul className="  menu-horizontal px-1 space-x-2 ">
+                        <li >
+                            <Link className=" hover:border-b-2 px-1 border-b-[#FD6A02]" href="/">Home</Link>
                         </li>
 
 
-                        <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                            <Link href="/baby-foods">Products</Link>
+                        <li>
+                            <Link className=" hover:border-b-2 px-1 border-b-[#FD6A02]" href="/baby-foods">Products</Link>
                         </li>
-                        <li className="hover:bg-[#FD6A02] rounded-md hover:text-white  ">
-                            <Link href="/flash-sale">Flash Sales</Link>
+                        <li>
+                            <Link className=" hover:border-b-2 px-1 border-b-[#FD6A02]" href="/flash-sale">Flash Sales</Link>
                         </li>
-                        <li className="hover:bg-[#FD6A02] rounded-md hover:text-white  ">
-                            <Link href="/category">Categories</Link>
+                        <li>
+                            <Link className=" hover:border-b-2 px-1 border-b-[#FD6A02]" href="/category">Categories</Link>
                         </li>
                        
-                        <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                            <Link href="/contact-us">Contact Us</Link>
+                        <li>
+                            <Link className=" hover:border-b-2 px-1 border-b-[#FD6A02]" href="/contact-us">Contact Us</Link>
                         </li>
-                        <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                            <Link href="/about-us">About Us</Link>
+                        <li>
+                            <Link className="hover:border-b-2 pb-[1px] hover:text-[#FD6A02] border-b-[#FD6A02]" href="/about-us">About Us</Link>
                         </li>
 
 
@@ -140,7 +179,7 @@ const Navbar = () => {
                             </Link>
                         </li>
 
-                    </ul>
+                    </ul> */}
                 </div>
 
             </div>

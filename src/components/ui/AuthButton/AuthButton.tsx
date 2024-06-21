@@ -1,6 +1,7 @@
 import { getUserInfo, isLoggedIn, removeUser } from "@/services/auth.service";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import NavLink from "../NavLink";
 
 const AuthButton = () => {
     const isLogged = isLoggedIn()
@@ -21,21 +22,21 @@ const AuthButton = () => {
             {
 
                 userInfo?.role === 'admin' &&
-                <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                    <Link href="/dashboard/products">Dashboard</Link>
+                <li >
+                    <NavLink href="/dashboard/products">Dashboard</NavLink>
                 </li>
             }
             {
 
                 userInfo?.role === 'user' &&
-                <li className="hover:bg-[#FD6A02] rounded-md hover:text-white ">
-                    <Link href="/dashboard/my-orders">Dashboard</Link>
+                <li >
+                    <NavLink href="/dashboard/my-orders">Dashboard</NavLink>
                 </li>
             }
             {userInfo?.email ?
 
                 <li>
-                    <button onClick={() => handleLogout()}>Logout</button>
+                    <button className="text-black" onClick={() => handleLogout()}>Logout</button>
                 </li> :
 
                 <li>
