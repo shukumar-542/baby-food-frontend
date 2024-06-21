@@ -85,6 +85,12 @@ const Navbar = () => {
                             <li>
                                 <Link href="/register">Register</Link>
                             </li>
+                            <li className="relative">
+                            <Link href="/checkout">
+                                <LuShoppingCart size={25} />
+                                <span className="bg-[#FD6A02] text-white text-center px-1 right-0 top-0  absolute rounded-full">{products.length}</span>
+                            </Link>
+                        </li>
                         </ul>
                     </div>
                     <Link href="/" className="flex items-center gap-2 justify-center ">

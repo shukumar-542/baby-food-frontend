@@ -5,7 +5,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen ">
+            <div className=" ">
                 {children}
             </div>
             <Footer />

@@ -28,7 +28,7 @@ const CheckoutPage = () => {
 
 
     return (
-        <div className='bg-[#F2F4F8] h-[100vh] pt-10 '>
+        <div className='bg-[#F2F4F8] flex justify-center items-center  pt-10 pb-20 '>
             <div className=' bg-white container rounded-md shadow-md   p-4'>
                 <h1 className='text-2xl font-serif mb-5 '>Shopping Cart</h1>
 
@@ -85,7 +85,7 @@ const CheckoutPage = () => {
                         </table>
 
                         <CartTotal />
-                    </div> : "you shopping cart is empty!!"
+                    </div> : "Your Shopping Cart Is Empty!!"
                 }
 
 

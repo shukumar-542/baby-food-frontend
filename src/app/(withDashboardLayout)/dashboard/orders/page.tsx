@@ -22,7 +22,7 @@ const OrderPage = () => {
         <div >
 
 
-            <h1 className="text-2xl font-serif mt-5 ml-5">All Orders :</h1>
+            <h1 className="text-2xl font-serif pt-5 ml-5">All Orders :</h1>
 
 
 

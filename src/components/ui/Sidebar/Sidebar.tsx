@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import babyFood from '@/assets/baby-food-.png'
 import { getUserInfo } from '@/services/auth.service';
 import { sideBarMenus } from '@/utils/sideBarMenu';
+import { LuLayoutDashboard } from 'react-icons/lu';
 const Sidebar = () => {
     const [userRole, setUserRole] = useState('');
 
@@ -29,7 +30,9 @@ const Sidebar = () => {
             <div className='flex flex-col gap-2'>
                 {
                     sideBarMenus(userRole).map((item, index) => (
-                        <Link key={index} href={`/dashboard/${item?.path}`} className='bg-[#FD6A02] text-white py-2  px-5  hover:shadow-md truncate'>{item?.title}</Link>
+                        <Link key={index} href={`/dashboard/${item?.path}`} className='bg-[#FD6A02] mx-4 rounded-md text-white py-2  px-5  hover:shadow-md truncate'>
+                            {/* <LuLayoutDashboard /> */}
+                            {item?.title}</Link>
 
                     ))
                 }

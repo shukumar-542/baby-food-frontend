@@ -16,7 +16,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
             </div>
             <div className="col-span-8 md:col-span-10">
                 <UserNavbar/>
-                <div className=" ">
+                <div className="bg-[#F2F7FB] ">
                 {children}
                 </div>
             </div>
