@@ -14,9 +14,9 @@ const MyOrdersPage = () => {
 
     const { data: orderProduct, isLoading } = useGetOrderProductQuery({})
     const allProducts = orderProduct?.filter((product: any) => product.email === userInfo?.email)
-    console.log(allProducts);
+    // console.log(allProducts);
     return (
-        <div className='mt-10 mx-10'>
+        <div className='pt-10 mx-10'>
             <div className='flex items-center gap-2 '>
                 <h1 className='text-2xl font-semibold '>Order Details</h1>
                 <p className='bg-[#EEF2FF] px-2 py-1 text-[#4F4BFF] font-bold'>Shipping</p>

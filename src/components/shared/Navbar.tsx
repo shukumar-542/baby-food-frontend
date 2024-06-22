@@ -131,8 +131,8 @@ const Navbar = () => {
                         </li>
                         <li className="relative">
                             <Link href="/checkout">
-                                <LuShoppingCart size={30} />
-                                <span className="bg-[#FD6A02] text-white text-center px-1 right-0 top-[-12px]  absolute rounded-full text-sm">{products.length}</span>
+                                <LuShoppingCart size={35} className=" bg-[#EDF9FB] text-[#00C9AD] rounded-full p-1 shadow-md"/>
+                                <span className="bg-[#FD6A02] text-white text-center px-[4px] right-0 top-[-12px]  absolute rounded-full text-sm">{products.length}</span>
                             </Link>
                         </li>
                     </ul>
