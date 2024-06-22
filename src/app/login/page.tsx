@@ -3,7 +3,7 @@ import { userLogin } from '@/services/action/loginUser';
 import { storeUserInfo } from '@/services/auth.service';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { CiUnlock } from 'react-icons/ci';
 import { MdEmail } from 'react-icons/md';
@@ -21,14 +21,20 @@ interface EmailPassword {
 
 const LoginPage = () => {
 
-    const [emailPassword, setEmailPassword] = useState({})
+    const [emailPassword, setEmailPassword] = useState<EmailPassword>({email : "", pass : ""})
     const router = useRouter()
     const {
         register,
         handleSubmit,
+        setValue,
         formState: { errors },
     } = useForm<Inputs>()
 
+
+    useEffect(() => {
+        setValue("email", emailPassword.email);
+        setValue("password", emailPassword.pass);
+    }, [emailPassword, setValue]);
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         try {
@@ -45,9 +51,8 @@ const LoginPage = () => {
     }
 
     const addEmail = () => {
-        setEmailPassword({"email" :"user@gmail.com", "pass" : '123456'})
+        setEmailPassword({"email" :"admin@gmail.com", "pass" : '123456'})
     }
-    console.log(emailPassword?.pass);
     return (
         <div className='container'>
             <div className='flex  items-center  h-[100vh] my-auto'>
@@ -69,7 +74,7 @@ const LoginPage = () => {
                             </div>
                             <div className="flex mt-5 items-center gap-2 border hover:border-red-400 border-gray-300 rounded-lg p-2">
                                 <CiUnlock className="text-gray-500 mr-2 w-6  size-6" />
-                                <input  placeholder="password" 
+                                <input type='password' placeholder="password" 
                                 defaultValue={emailPassword?.pass} 
                                 className="flex-grow outline-none border-none" {...register("password")} />
                             </div>

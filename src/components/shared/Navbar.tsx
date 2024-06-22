@@ -106,7 +106,7 @@ const Navbar = () => {
 
 
 
-                <ul className="menu-horizontal items-center px-1  space-x-2 ">
+                <ul className="menu-horizontal items-center px-1  space-x-4 ">
                         <li>
                             <NavLink href="/">Home</NavLink>
                         </li>
@@ -132,7 +132,7 @@ const Navbar = () => {
                         <li className="relative">
                             <Link href="/checkout">
                                 <LuShoppingCart size={30} />
-                                <span className="bg-[#FD6A02] text-white text-center px-1 right-0 top-[-12px]  absolute rounded-full">{products.length}</span>
+                                <span className="bg-[#FD6A02] text-white text-center px-1 right-0 top-[-12px]  absolute rounded-full text-sm">{products.length}</span>
                             </Link>
                         </li>
                     </ul>
