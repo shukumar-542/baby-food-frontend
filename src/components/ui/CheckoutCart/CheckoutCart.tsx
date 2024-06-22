@@ -25,28 +25,6 @@ const CheckoutCart = ({orderProducts} : {orderProducts : any} ) => {
                                 </tr>
                             </thead>
                             <tbody>
-                                    
-                                        {/* <tr >
-                                            
-                                            <td>{product?.productName}</td>
-                                            <td>{product?.category}</td>
-                                            <td className="flex gap-3 justify-center items-center">
-                                                <button className="bg-gray-200 p-1 rounded-sm " onClick={() => handleUpdateProductsQuantity(product?._id, 'decrement')}>
-                                                    <FiMinus />
-
-                                                </button>
-                                                {product?.quantity}
-                                                <button className="bg-gray-200 p-1 rounded-sm " onClick={() => handleUpdateProductsQuantity(product?._id, 'increment')}>
-                                                    <GoPlus />
-
-                                                </button>
-
-                                            </td>
-                                            <td>{product?.price}</td>
-                                            
-                                        </tr> */}
-
-
                             </tbody>
                         </table>
 

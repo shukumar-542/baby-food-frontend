@@ -4,6 +4,7 @@ import { useOrderProductMutation } from "@/redux/api/orderApi";
 import { clearCart } from "@/redux/feature/cartSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { getUserInfo } from "@/services/auth.service";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 type ProductNameAndQuantity = {
     productName: string;
@@ -17,7 +18,7 @@ const CheckoutButton = () => {
     const dispatch = useAppDispatch()
     const {email} = getUserInfo()
     // console.log(userInfo);
-
+    const router = useRouter()
     const { tax, grandTotal, totalPrice, products } = useAppSelector((store) => store.cart)
 
 
@@ -38,6 +39,7 @@ const CheckoutButton = () => {
             if (res?.insertedId) {
                 toast.success('Your order completed')
                 dispatch(clearCart())
+                router.push('./checkout/Place-order')
             }
 
         } catch (err: any) {
