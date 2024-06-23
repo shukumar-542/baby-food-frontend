@@ -3,6 +3,7 @@ import React from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
 import { product } from '@/type/product';
 import PopularProductCard from './PopularProductCard';
+import AllProductCard from './AllProductCard';
 
 const PopularProduct = async () => {
     const res = await fetch('https://baby-food-server.vercel.app/api/v1/top-rating', {
@@ -16,7 +17,7 @@ const PopularProduct = async () => {
             <div className='mx-5 md:mx-0 '>
                 <div className='flex justify-between items-center my-10'>
                     <div className='max-w-[45%]'>
-                        <h1 className='font-bold text-2xl'><span className='text-[#FD6A04]'>Most</span> <span className='text-[#2C188D]'>Popular </span>
+                        <h1 className='font-bold text-2xl'><span className='text-[#FD6A04]'>Most</span> <span className='text-[#01B0B9]'>Popular </span>
                             <span className='text-[#FD6A04] '>
                                 Products
                             </span>
@@ -34,7 +35,7 @@ const PopularProduct = async () => {
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-10'>
 
                     {
-                        products.slice(0, 6)?.map((product: product) => <PopularProductCard key={product._id} product={product} />)
+                        products.slice(0, 6)?.map((product: product) => <AllProductCard key={product._id} product={product} />)
                     }
 
                 </div>

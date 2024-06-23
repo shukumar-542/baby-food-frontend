@@ -2,6 +2,7 @@ import { getUserInfo, isLoggedIn, removeUser } from "@/services/auth.service";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import NavLink from "../NavLink";
+import Button from "../Button/Button";
 
 const AuthButton = () => {
     const isLogged = isLoggedIn()
@@ -11,7 +12,6 @@ const AuthButton = () => {
     const router = useRouter()
     const handleLogout = () => {
         removeUser();
-
         router.refresh()
     }
 
@@ -41,7 +41,7 @@ const AuthButton = () => {
 
                 <li>
 
-                    <button><Link href="/login">Login</Link></button>
+                    <Button className="rounded-2xl px-3 py-1 font-serif "><Link href="/login">Sign In</Link></Button>
                 </li>
             }
         </>

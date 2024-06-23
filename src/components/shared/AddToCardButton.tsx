@@ -12,7 +12,7 @@ const AddToCardButton = ({product}: {product : product}) => {
         dispatch(addToCart(product))
     }
     return (
-        <button onClick={()=>handleProduct(product)} className='flex gap-2 justify-center items-center bg-gray-200 rounded-full py-2 px-4 hover:bg-primary-color hover:text-white hover:transition-all'><CiShoppingBasket /> Add To Cart </button>
+        <button onClick={()=>handleProduct(product)} className='flex gap-2 justify-center items-center rounded-full py-2 px-4 bg-gradient-to-r from-[#01B0B9] to-[#00C9AD] hover:bg-gradient-t-r hover:from-[#00C9AD] hover:to-[#01B0B9] hover:transition-all text-white'><CiShoppingBasket /> Add To Cart </button>
     );
 };
 

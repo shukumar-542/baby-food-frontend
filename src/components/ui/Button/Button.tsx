@@ -7,7 +7,7 @@ type TButtonProps ={
 
 const Button = ({children , type , className} :  TButtonProps) => {
     return (
-        <button type={type} className={`${className} bg-[#f2f4f8] text-[#3749bb] hover:bg-[#3749bb] hover:text-[white] font-semibold px-4 py-2 rounded-sm flex items-center justify-center`}>
+        <button type={type} className={`${className} uppercase  text-white bg-gradient-to-r from-[#01B0B9] to-[#00C9AD] hover:bg-gradient-t-r hover:from-[#00C9AD] hover:to-[#01B0B9]`}>
             {children}
         </button>
     );

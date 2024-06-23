@@ -126,9 +126,11 @@ const Navbar = () => {
                             <NavLink href="/about-us">About Us</NavLink>
                         </li>
                         <AuthButton />
-                        <li>
+                        {
+                            !userRole && <li>
                             <NavLink href="/register">Register</NavLink>
                         </li>
+                        }
                         <li className="relative">
                             <Link href="/checkout">
                                 <LuShoppingCart size={35} className=" bg-[#EDF9FB] text-[#00C9AD] rounded-full p-1 shadow-md"/>
