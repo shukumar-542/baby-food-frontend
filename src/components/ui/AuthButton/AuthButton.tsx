@@ -36,7 +36,7 @@ const AuthButton = () => {
             {userInfo?.email ?
 
                 <li>
-                    <button className="text-black" onClick={() => handleLogout()}>Logout</button>
+                    <Button className="rounded-2xl px-3 py-1 font-serif" onClick={() => handleLogout()}>Sign out</Button>
                 </li> :
 
                 <li>

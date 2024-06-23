@@ -54,7 +54,7 @@ const DashboardAllProductPage = () => {
                 <div className='flex justify-between items-center mx-2'>
                     <p className='text-2xl font-bold py-2'><span className='text-[#2C188D]'>All</span> <span className='text-[#FD6A02]'>Products</span></p>
                     <Link href='/dashboard/products/add-product'>
-                        <Button >
+                        <Button className='flex items-center rounded-md px-4 py-2 shadow-md' >
                             <IoIosAdd size={20} />
                             Add New Products</Button>
                     </Link>

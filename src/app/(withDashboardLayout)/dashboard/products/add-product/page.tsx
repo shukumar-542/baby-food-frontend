@@ -43,7 +43,7 @@ const AddProductPage = () => {
 
     return (
         <div className=' bg-[#F2F4F8] h-full'>
-            <h1 className=' ml-4 text-xl font-semibold'>Add New Productss</h1>
+            <h1 className=' ml-4 text-xl font-semibold'>Add New Products</h1>
 
 
             <div className=' max-w-[50%] mx-auto pt-5 flex justify-center items-center bg-white px-5 rounded-md shadow-md'>
