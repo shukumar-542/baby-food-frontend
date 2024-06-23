@@ -30,7 +30,7 @@ const AuthButton = () => {
 
                 userInfo?.role === 'user' &&
                 <li >
-                    <NavLink href="/dashboard/my-orders">Dashboard</NavLink>
+                    <NavLink href="/dashboard/my-dashboard">Dashboard</NavLink>
                 </li>
             }
             {userInfo?.email ?

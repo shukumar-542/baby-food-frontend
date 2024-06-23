@@ -15,9 +15,9 @@ const Sidebar = () => {
     }, [])
     // console.log(userRole);
     return (
-        <div className='bg-gray-200  h-full  '>
+        <div className='bg-gray-200  fixed h-full '>
             <Link href="/">
-                <div className='pb-10 pt-10 flex items-center gap-2  justify-center cursor-pointer'>
+                <div className=' pr-5 pt-5 flex items-center gap-2  justify-center cursor-pointer mb-10'>
                     <Image src={babyFood} width={30} height={30} alt="brand logo" />
                     <div className="text-sm md:text-2xl font-semibold ">
                         Baby<span className="text-[#FD6A02]">Food</span>
@@ -30,7 +30,7 @@ const Sidebar = () => {
             <div className='flex flex-col gap-2'>
                 {
                     sideBarMenus(userRole).map((item, index) => (
-                        <Link key={index} href={`/dashboard/${item?.path}`} className='bg-[#FD6A02] mx-4 rounded-md text-white py-2  px-5  hover:shadow-md truncate'>
+                        <Link key={index} href={`/dashboard/${item?.path}`} className='bg-[#EDF9FB] mx-4 rounded-md  py-2  px-10  hover:shadow-md truncate hover:bg-[#02AFBB] hover:text-white'>
                             {/* <LuLayoutDashboard /> */}
                             {item?.title}</Link>
 

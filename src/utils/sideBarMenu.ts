@@ -5,25 +5,35 @@ export const sideBarMenus = (role: string) => {
     switch (role) {
         case 'admin':
             sideMenu.push(
-                {   
-                    title : 'products',
-                    path : 'products'
+                {
+                    title: 'products',
+                    path: 'products'
                 },
                 {
-                    title : 'Add products',
-                    path : 'products/add-product'
+                    title: 'Add products',
+                    path: 'products/add-product'
                 },
                 {
-                    title : 'Order Management',
-                    path : 'orders'
+                    title: 'Order Management',
+                    path: 'orders'
                 },
             )
             break;
         case 'user':
-            sideMenu.push({
-                title : 'My Order',
-                path : 'my-orders'
-            })
+            sideMenu.push(
+                {
+                    title : 'Dashboard',
+                    path : 'my-dashboard'
+                },
+                {
+                    title: 'My Order',
+                    path: 'my-orders'
+                },
+                {
+                    title : 'Profile',
+                    path : 'my-profile'
+                }
+            )
 
         default:
             break;

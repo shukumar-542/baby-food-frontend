@@ -53,7 +53,6 @@ const MyOrdersPage = () => {
                     <p className='mt-2  text-start'>Delivery</p>
                 </div>
             </div>
-
             {/* <div className='grid grid-cols-1 md:grid-cols-12 gap-5'> */}
 
             <div className="overflow-x-auto h-[100vh]" style={{ height: "calc(100vh - 130px)" }}>
