@@ -42,8 +42,8 @@ const AddProductPage = () => {
     }
 
     return (
-        <div className=' bg-[#F2F4F8] h-full'>
-            <h1 className=' ml-4 text-xl font-semibold'>Add New Products</h1>
+        <div className=' bg-[#F2F4F8] pb-5 '>
+            <h1 className=' ml-4 text-xl font-semibold text-center py-10'>Add New Products</h1>
 
 
             <div className=' max-w-[50%] mx-auto pt-5 flex justify-center items-center bg-white px-5 rounded-md shadow-md'>
@@ -83,8 +83,9 @@ const AddProductPage = () => {
                     </div>
 
                     <div className='flex justify-center items-center'>
-                        <Button type="submit" className='gap-1 bg-[#3749bb] text-[white]  my-5' >
-                            <FaUpload />Upload Products
+                        <Button type="submit" className='gap-2 flex items-center rounded-md justify-center px-4 py-2 text-[white]  my-5' >
+                            <FaUpload />
+                            <span>Upload Products</span>
                         </Button>
                     </div>
 
