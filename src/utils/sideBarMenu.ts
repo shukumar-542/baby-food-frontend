@@ -6,6 +6,10 @@ export const sideBarMenus = (role: string) => {
         case 'admin':
             sideMenu.push(
                 {
+                    title : 'Dashboard',
+                    path : 'admin'
+                },
+                {
                     title: 'products',
                     path: 'products'
                 },

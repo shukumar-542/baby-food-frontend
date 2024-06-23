@@ -23,7 +23,7 @@ const AuthButton = () => {
 
                 userInfo?.role === 'admin' &&
                 <li >
-                    <NavLink href="/dashboard/products">Dashboard</NavLink>
+                    <NavLink href="/dashboard/admin">Dashboard</NavLink>
                 </li>
             }
             {
