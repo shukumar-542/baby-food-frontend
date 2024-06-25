@@ -13,7 +13,7 @@ const PopularProduct = async () => {
     })
     const products = await res.json()
     return (
-        <div className='container'>
+        <div className='px-5'>
             <div className='mx-5 md:mx-0 '>
                 <div className='flex justify-between items-center my-10'>
                     <div className='max-w-[45%]'>

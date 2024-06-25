@@ -15,9 +15,9 @@ const AuthButton = dynamic(() => import('../ui/AuthButton/AuthButton'), { ssr: f
 const Navbar = () => {
     const [userRole, setUserRole] = useState()
     const [loading, setLoading] = useState(true);
-    
-    
-    useEffect(()=>{
+
+
+    useEffect(() => {
         const fetchUserRole = async () => {
             const userInfo = await getUserInfo();
             if (userInfo && userInfo.role) {
@@ -26,9 +26,9 @@ const Navbar = () => {
             setLoading(false);
         };
 
-        
+
         fetchUserRole();
-    },[])
+    }, [])
 
     const products = useAppSelector((store) => store.cart.products)
     // if (loading) {
@@ -36,8 +36,8 @@ const Navbar = () => {
     // }
 
     return (
-        <div className="bg-white  shadow-sm z-10  sticky top-0 border-b">
-            <div className="navbar h-[10px  ]">
+        <div className="bg-white mx-auto shadow-sm z-10  sticky top-0 border-b">
+            <div className="navbar h-[10px] justify-center">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -87,11 +87,11 @@ const Navbar = () => {
                                 <Link href="/register">Register</Link>
                             </li>
                             <li className="relative">
-                            <Link href="/checkout">
-                                <LuShoppingCart size={25} />
-                                <span className="bg-[#FD6A02] text-white text-center px-1 right-0 top-0  absolute rounded-full">{products.length}</span>
-                            </Link>
-                        </li>
+                                <Link href="/checkout">
+                                    <LuShoppingCart size={25} />
+                                    <span className="bg-[#FD6A02] text-white text-center px-1 right-0 top-0  absolute rounded-full">{products.length}</span>
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     <Link href="/" className="flex items-center gap-2 justify-center ">
@@ -102,11 +102,7 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex gap-2">
-
-
-
-
-                <ul className="menu-horizontal items-center px-1  space-x-4 ">
+                    <ul className="menu-horizontal items-center   space-x-4 ">
                         <li>
                             <NavLink href="/">Home</NavLink>
                         </li>
@@ -128,12 +124,12 @@ const Navbar = () => {
                         <AuthButton />
                         {
                             !userRole && <li>
-                            <NavLink href="/register">Register</NavLink>
-                        </li>
+                                <NavLink href="/register">Register</NavLink>
+                            </li>
                         }
                         <li className="relative">
                             <Link href="/checkout">
-                                <LuShoppingCart size={35} className=" bg-[#EDF9FB] text-[#00C9AD] rounded-full p-1 shadow-md"/>
+                                <LuShoppingCart size={35} className=" bg-[#EDF9FB] text-[#00C9AD] rounded-full p-1 shadow-md" />
                                 <span className="bg-[#FD6A02] text-white text-center px-[4px] right-0 top-[-12px]  absolute rounded-full text-sm">{products.length}</span>
                             </Link>
                         </li>
