@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import babyFood from '@/assets/baby-food-.png'
+import babyFood from '@/assets/logoNew.png'
 import Image from "next/image";
 import { LuShoppingCart } from "react-icons/lu";
 import { useAppSelector } from "@/redux/hooks";
@@ -96,7 +96,7 @@ const Navbar = () => {
                     </div>
                     <Link href="/" className="flex items-center gap-2 justify-center ">
                         <Image src={babyFood} width={30} height={30} alt="brand logo" />
-                        <div className="text-xl font-semibold">
+                        <div className="text-2xl font-serif">
                             <span className="text-[#2C188D]">Baby</span><span className="text-[#FD6A02]">Food</span>
                         </div>
                     </Link>

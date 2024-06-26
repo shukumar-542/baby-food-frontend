@@ -34,7 +34,7 @@ const AdminDashboard = () => {
                 </div>
                 <div className='bg-gradient-to-r from-[#9F8CD4] to-[#8C9DD4] text-white p-2 w-full rounded-md space-y-2 py-8 px-4 flex gap-5 items-center'>
                     <div><h1>Total Delivered : <span>{totalDeliveredProduct?.length}</span></h1>
-                        <h1>Total Price : <span className='text-3xl'></span>{totalDeliveredGrandTotal?.toFixed(2)}</h1></div>
+                        <h1>Total Price : <span className='text-3xl'>{totalDeliveredGrandTotal?.toFixed(2)}</span></h1></div>
                     <FaBangladeshiTakaSign size={30} className='text-[#BDC1E5] size-16' />
                 </div>
                 <div className='bg-gradient-to-r from-[#04A9F5] to-[#04A9F5] text-white p-2 w-full rounded-md space-y-2 py-8 px-4 flex gap-5 items-center '>
@@ -49,7 +49,7 @@ const AdminDashboard = () => {
 
             <h1 className='py-2 text-xl'>All Products</h1>
 
-            <div className="overflow-x-auto h-[100vh] bg-white" style={{ height: "calc(100vh - 130px)" }}>
+            <div className="overflow-x-auto h-[60vh] bg-white">
                 <table className="table">
                     <thead>
                         <tr>

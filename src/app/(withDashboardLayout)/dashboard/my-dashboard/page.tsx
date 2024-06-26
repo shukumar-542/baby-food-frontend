@@ -44,7 +44,7 @@ const MyDashboard = () => {
 
             {/* product Table */}
 
-            <div className="overflow-x-auto bg-white py-10 h-[100vh]">
+            <div className="overflow-x-auto bg-white py-10 h-[60vh]">
                 <table className="table table-zebra z-0">
                     {/* head */}
                     <thead>
