@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const PlaceOrderPage = () => {
     return (
-        <div className='mb-20 flex justify-center items-center flex-col'>
+        <div className='mb-20 flex justify-center items-center flex-col h-[50vh]'>
             <div className=''>
                 <Image src={done} height={150} width={200} alt='done' />
             </div>

@@ -17,7 +17,7 @@ const category = [
     {
         image: "https://i.ibb.co/KqvHt8b/cracker.png",
         name: 'Crackers',
-        color: '#E31837'
+        color: '#6EC3F0'
     },
     {
         image: "https://i.ibb.co/997zWpJ/snack.png",
