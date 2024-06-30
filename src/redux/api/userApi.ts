@@ -15,8 +15,21 @@ const userApi =  baseApi.injectEndpoints({
                 method : 'POST',
                 body : body
             })
+        }),
+        getUserInformation : builder.query({
+            query : (email)=>({
+                url : `/userInfo/${email}`,
+                method : 'GET',
+            })
+        }),
+        updateUserInformation : builder.mutation({
+            query:({id,info})=>({
+                url : `/user/${id}`,
+                method : 'PATCH',
+                body : info
+            })
         })
     })
 })
 
-export const  { useRegisterUserMutation, useGetUserMutation } = userApi
+export const  { useRegisterUserMutation, useGetUserMutation,useGetUserInformationQuery,useUpdateUserInformationMutation } = userApi
