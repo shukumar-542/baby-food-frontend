@@ -13,7 +13,6 @@ interface UserInfo {
 const UserNavbar = () => {
 
     const [user, setUserRole] = useState<UserInfo | null>();
-    console.log(user);
     useEffect(() => {
         const user = getUserInfo()
         setUserRole(user)

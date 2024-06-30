@@ -4,7 +4,7 @@ import { getUserInfo } from '@/services/auth.service';
 import React from 'react';
 import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 
-const MyDashboard = () => {
+const User = () => {
     const userInfo = getUserInfo();
     const { data: orderProduct, isLoading } = useGetOrderProductQuery({})
     const allProducts = orderProduct?.filter((product: any) => product.email === userInfo?.email)
@@ -89,4 +89,4 @@ const MyDashboard = () => {
     );
 };
 
-export default MyDashboard;
+export default User;
