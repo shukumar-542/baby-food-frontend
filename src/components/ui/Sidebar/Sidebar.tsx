@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import babyFood from '@/assets/baby-food-.png'
+import babyFood from '@/assets/logoNew.png'
 import { getUserInfo } from '@/services/auth.service';
 import { sideBarMenus } from '@/utils/sideBarMenu';
 import { LuLayoutDashboard } from 'react-icons/lu';
