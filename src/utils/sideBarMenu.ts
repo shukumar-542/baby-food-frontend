@@ -21,6 +21,10 @@ export const sideBarMenus = (role: string) => {
                     title: 'Order Management',
                     path: 'orders'
                 },
+                {
+                    title : 'Profile',
+                    path : 'my-profile'
+                }
             )
             break;
         case 'user':
