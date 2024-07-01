@@ -43,7 +43,7 @@ const MyProfile = () => {
                         </div>
 
                         <h1 className='text-3xl pt-20 font-bold flex justify-center items-center gap-2  text-[#01B0B9]'>{userInfo?.name}<span className='cursor-pointer text-[#01B0B9] hover:text-[#37cbd3]' ><Link href={'/dashboard/update-profile'}><FaRegEdit /></Link></span></h1>
-                        <p>Admin</p>
+                        <p>{userInfo?.role}</p>
 
                     </div>
                     <p>Email : {userInfo?.email}</p>

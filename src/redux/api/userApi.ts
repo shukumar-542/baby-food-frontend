@@ -1,4 +1,5 @@
 import { baseApi } from "./baseApi";
+import { tagTypes } from "./tag-types";
 
 const userApi =  baseApi.injectEndpoints({
     endpoints : (builder)=>({
@@ -20,14 +21,16 @@ const userApi =  baseApi.injectEndpoints({
             query : (email)=>({
                 url : `/userInfo/${email}`,
                 method : 'GET',
-            })
+            }),
+            providesTags : [tagTypes.user]
         }),
         updateUserInformation : builder.mutation({
             query:({id,info})=>({
                 url : `/user/${id}`,
                 method : 'PATCH',
                 body : info
-            })
+            }),
+            invalidatesTags : [tagTypes.user]
         })
     })
 })

@@ -70,10 +70,10 @@ const UpdateProfile = () => {
     }
 
     return (
-        <div className='mx-10 h-[93vh] flex items-center justify-center'>
-            <div>
-                <h1>Update Your Information</h1>
-                <div className='w-full bg-white p-8 rounded-md shadow-md'>
+        <div className='mx-10 h-[93vh] flex items-center justify-center w-[90%]'>
+            <div className=' w-[40%]'>
+                <h1 className='text-2xl font-bold mb-5 text-center'>Update Your Information</h1>
+                <div className=' bg-white p-8 rounded-md shadow-md'>
                     <form onSubmit={handleSubmit}>
                         <div className="flex flex-col space-y-2 w-full">
                             <label htmlFor="name" className="text-gray-400">Name</label>
