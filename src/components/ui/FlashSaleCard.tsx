@@ -8,7 +8,7 @@ import Link from 'next/link';
 const FlashSaleCard = ({ product }: { product: product }) => {
     return (
         <div className="card border rounded-md   hover:shadow-xl hover:transition-all cursor-pointer hover:duration-400">
-            <figure className='relative w-full h-[250px] '>
+            <figure className='relative w-full h-[250px] serviceCard '>
                 <Image src={product?.image} width={200} height={100} alt='Flash sale image' />
                 {
                     product?.discount ? <div className="text-sm px-4 rounded-tr-full rounded-br-full bg-[#FD6A02] text-white py-1 absolute top-2 left-0">Save : {product?.discount}%</div> : ""
