@@ -33,3 +33,15 @@
     --color-secondary: #FBE987;
     --color-third: #FDC726
 }
+.serviceCard img {
+    transition: transform 0.3s ease;
+}
+
+.serviceCard:hover img {
+    transform: scale(1.2);
+}
+
+.serviceCard:hover {
+    transition: all 1s ease;
+
+}
